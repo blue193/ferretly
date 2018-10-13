@@ -1,0 +1,47 @@
+<div class="modal-body fb-confirm-container">
+  <div class="header-container">
+    <div class="title-container">
+      <img class="logo" src="/assets/images/facebook-logo.png"/>
+      <span class="title">Please add your Facebook Credentials</span>
+    </div>
+    <span class="comment">
+      Please provide your Facebook login and password to authorize Ferretly to use Facebook on your behalf.
+      By entering this information, this allows Ferretly to determine you have a valid Facebook account.
+      We do not collect, modify, store or share any information from your profile.
+      We ask for this information in order to abide by Facebook’s policy as it relates to accessing public posts on their platform from third-party applications.
+      You will only be required to enter this information once and whenever you change your Facebook password.
+      You can edit this information from the Settings page.
+    </span>
+  </div>
+
+  <div class="body-container">
+    <div class="info-container">
+      <ngb-alert type="danger" *ngIf="misMatchPass" (close)="closeAlert()">Passwords do not match. Please try again.</ngb-alert>
+      <div class="info-wrapper">
+        <label class="label">
+          Your Facebook Account:
+        </label>
+        <span class="fb-handle">
+          <input type="text" class="fb-handle" [(ngModel)]="handle">
+        </span>
+      </div>
+      <div class="info-wrapper">
+        <label class="label">
+          Password:
+        </label>
+        <input type="password" class="fb-handle" [(ngModel)]="password">
+      </div>
+      <div class="info-wrapper">
+        <label class="label">
+          Confirm Password:
+        </label>
+        <input type="password" class="fb-handle" [(ngModel)]="confirmPass">
+      </div>
+    </div>
+  </div>
+
+  <div class="action-container">
+    <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+    <button class="btn btn-success" [ngClass]="{disabled: !handle || !password || !confirmPass}" (click)="confirm()">Confirm</button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.custom-checkbox {
+  padding-left: 1.2rem;
+}
+
+.custom-control-label {
+  border-color: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label {
+  &::before, &::after {
+    color: rgba(255, 255, 255, 0.54);
+  }
+}
+
+.custom-navbar.sidebar-footer {
+  border-top: 0;
+
+  .sidebar-circle-chart {
+    justify-content: center;
+    flex-direction: column;
+
+    .c100 > span {
+      line-height: initial;
+    }
+
+    .c100.dark.green {
+      margin-bottom: 10px;
+    }
+
+    .circle-chart-value {
+      color: #5a6070;
+      top: 1.4em;
+      font-size: 28px;
+    }
+
+    .circle-chart-value-comment {
+      color: #5a6070;
+      font-size: 10px;
+      top: 7.5em;
+    }
+
+    .sidebar-circle-chart-comment {
+      color: #9195a0;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

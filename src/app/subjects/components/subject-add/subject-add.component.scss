@@ -1,0 +1,111 @@
+.new-subject-container {
+  background-color: #333b4e;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3rem 2.5rem;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .title {
+      font-size: 34px;
+      padding: 0 30px;
+    }
+  }
+
+  .body-container {
+    margin-bottom: 2rem;
+    font-size: 14px;
+
+    .comment {
+      margin-bottom: 2rem;
+
+      a.find-profile {
+        color: #73d400 !important;
+        text-decoration: underline !important;
+      }
+    }
+
+    .subject-form-container {
+      padding: 20px;
+
+      .input-subject {
+        width: 100%;
+        background-color: #353a4f;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        padding: 5px 40px 5px 5px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .subject-name {
+        margin-bottom: 30px;
+      }
+
+      .social-handle-wrapper {
+        display: flex;
+        margin-bottom: 20px;
+
+        .social-logo {
+          // width: 35px;
+          height: 35px;
+          margin-right: 20px;
+        }
+
+        .input-subject-wrapper {
+          display: flex;
+          width: 100%;
+          position: relative;
+          align-items: center;
+
+          .icon-search {
+            position: absolute;
+            right: 10px;
+            font-size: 22px;
+            cursor: pointer;
+
+            &.disabled {
+              color: rgba(255, 255, 255, 0.2);
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background-color: transparent;
+      cursor: pointer;
+      border-color: #5fd400;
+      color: #ffffff;
+      margin: 0 10px;
+      min-width: 150px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #5fd400
+      }
+
+      &.disabled {
+        border-color: rgba(255, 255, 255, 0.7);
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+input:focus {
+  outline: none
+}

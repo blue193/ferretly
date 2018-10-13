@@ -1,0 +1,246 @@
+<div class="desktop-view row">
+  <div class="col-xl-4 col-sm-5">
+    <div class="poster-card-container" *ngFor="let poster of posters" (click)="onChangePoster(poster)">
+      <div class="card" [ngClass]="{'selected': selectedPoster === poster}">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-12 col-lg-5">
+              <figure class="mb-0">
+                <div class="text-center">
+                  <img [src]="poster.imageUrl" alt="" class="rounded-circle post-card-avatar">
+                </div>
+              </figure>
+            </div>
+            <div class="col-md-12 col-lg-7 text-lg-left flex-container flex-column-direction space-between">
+              <div class="flex-container space-between align-items-center pb-20">
+                <div>
+                  <h5 class="mb-0">
+                    <span>{{poster.firstName}}</span> <span>{{poster.lastName}}</span>
+                  </h5>
+                  <small>{{poster.email}}</small>
+                </div>
+                <div>
+                  <img [src]="poster.socialImage" class="social-logo">
+                </div>
+              </div>
+
+              <div>
+                <p class="mb-0 pb-0">{{poster.biography}}</p>
+                <p class="mb-0 pb-0">
+                  <i class="fa fa-map-marker address-marker"></i>
+                  {{poster.address}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col">
+              <h2 class="mt-0 fw-300"><b>{{poster.followers}}</b></h2>
+              <small>Followers</small>
+            </div>
+            <div class="col">
+              <h2 class="mt-0 fw-300"><b>{{poster.following}}</b></h2>
+              <small>Following</small>
+            </div>
+            <div class="col">
+              <h2 class="mt-0 fw-300"><b>{{poster.posts}}</b></h2>
+              <small>Posts</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-8 col-sm-7">
+    <div class="card">
+      <ngb-tabset class="card-tab" *ngIf="posts.length">
+        <ngb-tab title="Posts">
+          <ng-template ngbTabContent>
+            <div class="card" *ngFor="let post of posts">
+              <div class="card-header post-card-header">
+                <div class="post-content-header">
+                  <div class="post-card-social">
+                    <img class="list-card-avatar" [src]="post.socialImage">
+                  </div>
+                  <div class="card-header-text">
+                    <div class="card-title post-title">{{post.content.text}}</div>
+                    <div class="card-subtitle">
+                      <img src="/assets/images/retweet.png" class="img-retweet" />
+                      <span>1 week ago</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-action-container">
+                  <!-- <div class="post-action-wrapper">
+                    <i class="fa fa-ellipsis-v more-action"></i>
+                  </div> -->
+                  <div class="post-status-wrapper">
+                    <img *ngIf="post.content.sentiment === 1" src="/assets/images/thumb-up.png" class="img-vote" />
+                    <img *ngIf="post.content.sentiment === 2" src="/assets/images/thumb-left.png" class="img-vote" />
+                    <img *ngIf="post.content.sentiment === 3" src="/assets/images/thumb-down.png" class="img-vote" />
+                  </div>
+                  <div class="post-status-wrapper" [ngClass]="{'hide': !post.content.warning}" placement="top" [ngbTooltip]="warningToolTipContent">
+                    <img src="/assets/images/warning-logo.png" class="img-vote" />
+                  </div>
+                </div>
+              </div>
+              <div class="card-body post-card-body">
+                <div class="media-tile media-tile-footer" *ngIf="post.content.image">
+                  <figure style="width: 300px">
+                    <img [src]="post.content.image" alt="Card image cap" class="img-fluid" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Media">
+          <ng-template ngbTabContent>
+            <div class="card card-body mb-0 pb-0">
+              <div class="row">
+                <div class="media-tile media-tile-footer col-lg-4 col-sm-6" *ngFor="let imagePost of imagePosts">
+                  <figure>
+                    <img [src]="imagePost.content.image" alt="Card image cap" class="img-fluid" />
+                    <figcaption class="image-post-meta-container">
+                      <div>
+                        <h6 class="media-title fw-300">{{imagePost.content.date}}</h6>
+                        <small class="media-subtitle">{{imagePost.content.metaData}}</small>
+                      </div>
+                      <div *ngIf="imagePost.content.warning" class="image-post-warning-wrapper" placement="top" [ngbTooltip]="warningToolTipContent">
+                        <img src="/assets/images/warning-logo.png" class="img-vote" />
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>
+<div class="mobile-view row">
+  <div class="col-sm-12">
+    <div class="poster-card-container" *ngFor="let poster of posters" (click)="onChangePoster(poster)">
+      <div class="card" [ngClass]="{'selected': selectedPoster === poster}">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-12 col-lg-5">
+              <figure class="mb-0">
+                <div class="text-center">
+                  <img [src]="poster.imageUrl" alt="" class="rounded-circle post-card-avatar">
+                </div>
+              </figure>
+            </div>
+            <div class="col-md-12 col-lg-7 text-lg-left flex-container flex-column-direction space-between">
+              <div class="flex-container space-between align-items-center pb-20">
+                <div>
+                  <h5 class="mb-0">
+                    <span>{{poster.firstName}}</span> <span>{{poster.lastName}}</span>
+                  </h5>
+                  <small>{{poster.email}}</small>
+                </div>
+                <div>
+                  <img [src]="poster.socialImage" class="social-logo">
+                </div>
+              </div>
+
+              <div>
+                <p class="mb-0 pb-0">{{poster.biography}}</p>
+                <p class="mb-0 pb-0">
+                  <i class="fa fa-map-marker address-marker"></i>
+                  {{poster.address}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col">
+              <h2 class="mt-0 fw-300"><b>{{poster.followers}}</b></h2>
+              <small>Followers</small>
+            </div>
+            <div class="col">
+              <h2 class="mt-0 fw-300"><b>{{poster.following}}</b></h2>
+              <small>Following</small>
+            </div>
+            <div class="col">
+              <h2 class="mt-0 fw-300"><b>{{poster.posts}}</b></h2>
+              <small>Posts</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedPoster === poster">
+        <div class="card">
+          <ngb-tabset class="card-tab" *ngIf="posts.length">
+            <ngb-tab title="Posts">
+              <ng-template ngbTabContent>
+                <div class="card" *ngFor="let post of posts">
+                  <div class="card-header post-card-header">
+                    <div class="post-content-header">
+                      <div class="post-card-social">
+                        <img class="list-card-avatar" [src]="post.socialImage">
+                      </div>
+                      <div class="card-header-text">
+                        <div class="card-title post-title">{{post.content.text}}</div>
+                        <div class="card-subtitle">
+                          <img src="/assets/images/retweet.png" class="img-retweet" />
+                          <span>1 week ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-action-container">
+                      <div class="post-status-wrapper">
+                        <img *ngIf="post.content.sentiment === 1" src="/assets/images/thumb-up.png" class="img-vote" />
+                        <img *ngIf="post.content.sentiment === 2" src="/assets/images/thumb-left.png" class="img-vote" />
+                        <img *ngIf="post.content.sentiment === 3" src="/assets/images/thumb-down.png" class="img-vote" />
+                      </div>
+                      <div class="post-status-wrapper" [ngClass]="{'hide': !post.content.warning}" placement="top" [ngbTooltip]="warningToolTipContent">
+                        <img src="/assets/images/warning-logo.png" class="img-vote" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body post-card-body">
+                    <div class="media-tile media-tile-footer" *ngIf="post.content.image">
+                      <figure>
+                        <img [src]="post.content.image" alt="Card image cap" class="img-fluid" />
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Media">
+              <ng-template ngbTabContent>
+                <div class="card card-body mb-0 pb-0">
+                  <div class="row">
+                    <div class="media-tile media-tile-footer col-lg-4 col-sm-6" *ngFor="let imagePost of imagePosts">
+                      <figure>
+                        <img [src]="imagePost.content.image" alt="Card image cap" class="img-fluid" />
+                        <figcaption class="image-post-meta-container">
+                          <div>
+                            <h6 class="media-title fw-300">{{imagePost.content.date}}</h6>
+                            <small class="media-subtitle">{{imagePost.content.metaData}}</small>
+                          </div>
+                          <div *ngIf="imagePost.content.warning" class="image-post-warning-wrapper" placement="top" [ngbTooltip]="warningToolTipContent">
+                            <img src="/assets/images/warning-logo.png" class="img-vote" />
+                          </div>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple"></ngx-spinner>

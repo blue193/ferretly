@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="tool-bar">
+        <div class="filter-container">
+          <h3 class="page-title">Subjects </h3>
+          <small class="subject-count">({{subjects.length}})</small>
+          <span class="select-all" (click)="selectAllSubjects(true)" *ngIf="!isSelectedAll">Select all</span>
+          <span class="select-all" (click)="selectAllSubjects(false)" *ngIf="isSelectedAll">Deselect all</span>
+        </div>
+
+        <div class="action-container">
+          <img class="icon icon-logo" *ngIf="selectedSubjectCount" src="/assets/images/ic-logo.png"
+                container="body" placement="top" ngbTooltip="Run Check" (click)="runCheck()" />
+          <img class="icon icon-logo" *ngIf="!selectedSubjectCount" src="/assets/images/ic-logo-disabled.png"
+                container="body" placement="top" ngbTooltip="Run Check" />
+          <i class="icon icon-user fas fa-user-plus" (click)="addSubject()" container="body" placement="top" ngbTooltip="Add Subject"></i>
+          <i class="icon icon-download fas fa-download" container="body" placement="top" ngbTooltip="Download"></i>
+        </div>
+      </div>
+
+      <div class="tool-bar-mobile">
+        <div class="page-title-container">
+          <h3 class="page-title">Subjects</h3>
+          <div class="action-container">
+            <img class="icon icon-logo" src="/assets/images/ic-logo.png" container="body" placement="top" ngbTooltip="Run Check" />
+            <i class="icon icon-user fas fa-user-plus" (click)="addSubject()" container="body" placement="top" ngbTooltip="Add Subject"></i>
+            <i class="icon icon-download fas fa-download" container="body" placement="top" ngbTooltip="Download"></i>
+          </div>
+        </div>
+        <div class="filter-container">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="subject-list-container">
+      <div class="subject-item-container" *ngFor="let subject of subjects">
+        <label class="custom-checkbox">
+          <input type="checkbox" [(ngModel)]="subject.isSelected" (ngModelChange)="selectSubject(subject)">
+          <span class="checkmark"></span>
+        </label>
+        <div class="subject-content-container">
+          <div class="avatar-container">
+            <img class="subject-avatar" [src]="subject.avatar" />
+          </div>
+          <div class="subject-content">
+            <span class="subject-name" (click)="addSubject(subject)">{{subject.name}}</span>
+            <span class="subject-date">Added {{subject.date}}</span>
+          </div>
+          <div class="subject-action-container">
+            <div class="run-check-container" *ngIf="!subject.isChecked" (click)="runCheck(subject)">
+              <span class="run-check-value">Run Check</span>
+            </div>
+            <div class="run-check-container" *ngIf="subject.isChecked" (click)="runCheck(subject)">
+              <span class="run-check-value" [ngClass]="getCheckValueBGColor(subject)">{{subject.checkValue}}</span>
+              <span class="run-check-date">{{subject.checkDate}}</span>
+            </div>
+
+            <div class="action-icon-container" [ngClass]="{checked: subject.isChecked}" (click)="redirectToDashboard(subject)">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <div class="action-icon-container" [ngClass]="{checked: subject.isChecked}">
+              <i class="far fa-file-pdf"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

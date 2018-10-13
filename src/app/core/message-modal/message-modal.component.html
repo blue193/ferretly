@@ -1,0 +1,17 @@
+<div class="message-modal-container">
+  <div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="content-container">
+      <p>{{content}}</p>
+    </div>
+    <div class="action-container">
+      <button class="btn btn-primary" *ngIf="dismissBtn" (click)="closeModal()">{{dismissBtn}}</button>
+      <button class="btn btn-success" (click)="confirm()">{{confirmBtn}}</button>
+    </div>
+  </div>
+</div>

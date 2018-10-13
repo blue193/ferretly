@@ -1,0 +1,141 @@
+.flex-container {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-column-direction {
+  flex-direction: column;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.card {
+  &.selected {
+    border: 2px solid #4db53c;
+  }
+}
+
+.social-logo {
+  width: 50px;
+}
+
+.address-marker {
+  font-size: 18px;
+  padding-right: 5px;
+}
+
+.post-card-avatar {
+  width: 150px;
+}
+
+.post-title {
+  font-size: 15px;
+  color: #ffffff;
+  line-height: 1.4 !important;
+}
+
+.card-subtitle {
+  .img-retweet {
+    width: 15px;
+  }
+}
+
+.post-card-header {
+  align-items: start;
+
+  .post-content-header {
+    display: flex;
+    flex: 1 1 90%;
+
+    .post-card-social {
+      // width: 40px;
+
+      .list-card-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 0%;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .post-action-container {
+    display: flex;
+    flex: 1 1 10%;
+    padding: 0 10px;
+    align-items: start;
+
+    .post-action-wrapper {
+      .more-action {
+        font-size: 30px;
+      }
+    }
+
+    .post-status-wrapper {
+      margin-left: 15px;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      &.hide {
+        visibility: hidden;
+      }
+
+      .img-vote {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+
+.image-post-meta-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .image-post-warning-wrapper {
+    align-items: flex-end;
+    display: flex;
+
+    .img-vote {
+      width: 25px;
+    }
+  }
+}
+
+.post-card-body {
+  margin-left: 55px;
+  padding: 0 1.25rem;
+}
+
+.media-tile.media-tile-footer figcaption {
+  position: initial;
+}
+
+@media only screen and (max-width: 1024px) {
+  .post-card-avatar {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .mobile-view {
+    display: initial;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+}

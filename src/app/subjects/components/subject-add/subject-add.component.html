@@ -1,0 +1,48 @@
+<div class="modal-body new-subject-container">
+  <div class="header-container">
+    <span class="title" *ngIf="!isEdit">Add a new subject</span>
+    <span class="title" *ngIf="isEdit">Edit subject</span>
+  </div>
+
+  <div class="body-container">
+    <p class="comment">
+      Use this page to add a new subject and their associated social media profiles.
+      If you don't know the subject's profiles, you can enter their name and click on magnifying glass icon
+      next to the social media platform to search.
+      You can run the background check after you have entered all of your subjects.
+    </p>
+    <div class="subject-form-container">
+      <input class="input-subject subject-name" placeholder="enter the name of the subject here" [(ngModel)]="name" (ngModelChange)="nameTyping$.next($event)">
+      <div class="social-handle-container">
+        <div class="social-handle-wrapper">
+          <img class="social-logo" src="/assets/images/instagram-logo.png" />
+          <div class="input-subject-wrapper">
+            <input class="input-subject" placeholder="enter their Instagram handle" [(ngModel)]="instagram">
+            <i class="icon-search fas fa-search" [ngClass]="{disabled: !isAvailableSearch}" (click)="onFindProfile('Instagram')"></i>
+          </div>
+        </div>
+        <div class="social-handle-wrapper">
+          <img class="social-logo" src="/assets/images/facebook-logo.png" />
+          <div class="input-subject-wrapper">
+            <input class="input-subject" placeholder="enter their Facebook handle" [(ngModel)]="facebook">
+            <i class="icon-search fas fa-search" [ngClass]="{disabled: !isAvailableSearch}" (click)="onFindProfile('Facebook')"></i>
+          </div>
+        </div>
+        <div class="social-handle-wrapper">
+          <img class="social-logo" src="/assets/images/twitter-logo.png" />
+          <div class="input-subject-wrapper">
+            <input class="input-subject" placeholder="enter their Twitter handle" [(ngModel)]="twitter">
+            <i class="icon-search fas fa-search" [ngClass]="{disabled: !isAvailableSearch}" (click)="onFindProfile('Twitter')"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-container">
+    <button class="btn btn-primary" (click)="close()">Cancel</button>
+    <button class="btn btn-primary" [ngClass]="{disabled: !isAvailableSearch || (!instagram && !facebook && !twitter) }" (click)="saveAndClose()">Save and Close</button>
+    <button class="btn btn-primary" [ngClass]="{disabled: !isAvailableSearch || (!instagram && !facebook && !twitter) }" (click)="saveAndNew()">Save and add New</button>
+    <button class="btn btn-success" [ngClass]="{disabled: !isAvailableSearch || (!instagram && !facebook && !twitter) }" (click)="saveAndRunCheck()">Save and Run Now</button>
+  </div>
+</div>

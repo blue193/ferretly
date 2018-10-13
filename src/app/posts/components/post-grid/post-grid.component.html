@@ -1,0 +1,45 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple"></ngx-spinner>
+<div class="grid-container">
+  <div class="grid">
+    <div class="grid-card" *ngFor="let post of posts; let i = index">
+      <div class="card" [ngClass]="{'selected': selectedPost === post}" (click)="onChangePost(post)">
+        <div class="card-body bottom-line-card">
+          <div class="flex-container space-between">
+            <img class="rounded-circle grid-card-avatar" [src]="post.poster.imageUrl" />
+            <div class="grid-card-user-info">
+              <span>({{post.poster.email}})</span>
+              <span class="user-name">{{post.poster.firstName}} {{post.poster.lastName}}</span>
+            </div>
+            <img [src]="post.poster.socialImage" class="social-logo">
+          </div>
+        </div>
+        <div class="card-body bottom-line-card">
+          <div class="flex-container flex-column-direction text-center">
+            <img class="grid-card-post-image" *ngIf="post.post.content.image" [src]="post.post.content.image" />
+            <span class="grid-card-post-content">
+              {{post.post.content.text}}
+            </span>
+          </div>
+        </div>
+        <div class="card-body grid-card-footer">
+          <div class="flex-container space-between">
+            <div class="post-date-wrapper">
+              <img src="/assets/images/retweet.png" class="img-retweet" />
+              <span class="post-time">47 Minutes Ago</span>
+            </div>
+            <div class="card-action-container">
+              <div class="post-status-wrapper">
+                <img *ngIf="post.post.content.sentiment === 1" src="/assets/images/thumb-up.png" class="img-vote" />
+                <img *ngIf="post.post.content.sentiment === 2" src="/assets/images/thumb-left.png" class="img-vote" />
+                <img *ngIf="post.post.content.sentiment === 3" src="/assets/images/thumb-down.png" class="img-vote" />
+              </div>
+              <div class="post-status-wrapper" [ngClass]="{'hide': !post.post.content.warning}" placement="top" [ngbTooltip]="warningToolTipContent">
+                <img src="/assets/images/warning-logo.png" class="img-vote" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

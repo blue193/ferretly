@@ -1,0 +1,192 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="tool-bar">
+        <div class="filter-container">
+          <h3 class="page-title">Dashboard</h3>
+          <div class="select-container">
+            <ng-select
+              class="custom-selector"
+              [clearable]="false"
+              [searchable]="true"
+              [items]="posters"
+              bindLabel="name"
+              placeholder="Choose Handle"
+              [(ngModel)]="poster"
+              (change)="onChangePoster($event)">
+            </ng-select>
+          </div>
+        </div>
+
+        <div>
+          <i class="icon-print fa fa-download"></i>
+        </div>
+      </div>
+
+      <div class="tool-bar-mobile">
+        <div class="page-title-container">
+          <h3 class="page-title">Dashboard</h3>
+          <i class="icon-print fa fa-download"></i>
+        </div>
+        <div class="filter-container">
+          <div class="select-container">
+            <ng-select
+              class="custom-selector"
+              [clearable]="false"
+              [searchable]="true"
+              [items]="posters"
+              bindLabel="name"
+              placeholder="Select Poster"
+              [(ngModel)]="poster"
+              (change)="onChangePoster($event)">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        Post Insights
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-4 col-md-12">
+            <div class="gauge-chart-container">
+              <span class="gauge-label">SCORE</span>
+              <ngx-charts-gauge
+                class="gauge-container"
+                [legend]=false
+                [results]="gaugeOptions.data"
+                [textValue]="gaugeOptions.textValue"
+                [scheme]="gaugeOptions.color"
+                [min]="gaugeOptions.min"
+                [max]="gaugeOptions.max"
+                [units]="gaugeOptions.units"
+                [angleSpan]="gaugeOptions.angleSpan"
+                [startAngle]="gaugeOptions.startAngle"
+                [showAxis]="gaugeOptions.showAxis"
+                [bigSegments]="gaugeOptions.largeSegments"
+                [smallSegments]="gaugeOptions.smallSegments"
+                [margin]="gaugeOptions.margin"
+                [tooltipDisabled]=false>
+              </ngx-charts-gauge>
+            </div>
+          </div>
+          <div class="col-xl-8 col-md-12">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-2" *ngFor="let badge of badgeCardData; let i = index">
+                <div class="card badge-card-container text-white" [style.border-color]="badge.color">
+                  <div class="card-body badge-card-body" (click)="clickBadge(i)" (mouseover)="badgeHover=i" (mouseleave)="badgeHover=-1"
+                    [style.background-color]="(badgeHover === i || selectedBadge === i) ? getBadgeBGColor(badgeHover, selectedBadge, badge) : null">
+                    <span class="card-text badge-value">
+                      {{badge.value}}
+                    </span>
+                    <span class="card-text badge-name">
+                      {{badge.name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row flex-container">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            Sentiment Over Time
+          </div>
+          <div class="card-body">
+            <div>
+              <ngx-charts-line-chart
+                class="pie-chart-container"
+                [scheme]="lineChartData.color"
+                schemeType="ordinal"
+                [results]="lineChartData.data"
+                [legend]=false
+                (legendLabelClick)="onLegendLabelClick($event)"
+                [gradient]=false
+                [xAxis]=true
+                [yAxis]=true
+                [showXAxisLabel]=false
+                [showYAxisLabel]=false
+                [autoScale]=true
+                [timeline]=false
+                [showGridLines]=true
+                [curve]="lineChartData.curve"
+                [rangeFillOpacity]="lineChartData.rangeFillOpacity"
+                [roundDomains]=false
+                [tooltipDisabled]="false"
+                (select)="select($event)">
+              </ngx-charts-line-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+              Sentiment Over Time
+          </div>
+          <div class="card-body">
+            <div>
+              <ngx-charts-advanced-pie-chart
+                class="pie-chart-container"
+                [scheme]="pieChartData.color"
+                [results]="pieChartData.data"
+                (legendLabelClick)="onLegendLabelClick($event)"
+                [gradient]=false
+                [tooltipDisabled]=false
+                (select)="select($event)">
+              </ngx-charts-advanced-pie-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-6 recent-post-wrapper">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header no-shadow">Threat Triggered Posts - Threat of Violence</div>
+          <div class="card-body recent-post-body">
+            <ngb-accordion [closeOthers]="true">
+              <ngb-panel class="post-card-boday" *ngFor="let post of triggeredPosts">
+                <ng-template ngbPanelTitle>
+                  <div class="post-card-container">
+                    <img class="card-avatar icon-social" [src]="post.socialType">
+                    <div class="card-header-text post-content-container">
+                      <div class="card-title post-title">{{post.title}}</div>
+                      <div class="post-date">{{post.postDate}}</div>
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  <div class="post-content">
+                    {{post.content}}
+                  </div>
+                  <img class="img-post-content" *ngIf="post.contentImage" [src]="post.contentImage">
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="tool-bar">
+        <div class="filter-container">
+          <h3 class="page-title">Posts</h3>
+          <div class="select-container">
+            <ng-select
+              class="custom-selector"
+              [clearable]="false"
+              [searchable]="true"
+              [items]="posterGroups"
+              bindLabel="name"
+              placeholder="Choose Handle"
+              [(ngModel)]="selectedPosterGroup"
+              (change)="onChangePosterGroup($event)">
+            </ng-select>
+            <div class="filter-by-container">
+              <ng-select
+                class="custom-selector"
+                [clearable]="false"
+                [searchable]="true"
+                [items]="postFilterGroups"
+                bindLabel="name"
+                placeholder="Choose Filter"
+                [(ngModel)]="selectedFilterGroup"
+                (change)="onChangePostFilter($event)">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-icon-container">
+          <img class="view-icon" *ngIf="isGridView" (click)="onGridView()" src="/assets/images/ic-grid-active.png">
+          <img class="view-icon" *ngIf="isGridView" (click)="onListView()" src="/assets/images/ic-list.png">
+          <img class="view-icon" *ngIf="!isGridView" (click)="onGridView()" src="/assets/images/ic-grid.png">
+          <img class="view-icon" *ngIf="!isGridView" (click)="onListView()" src="/assets/images/ic-list-active.png">
+          <i class="download-icon fa fa-download"></i>
+        </div>
+      </div>
+
+      <div class="tool-bar-mobile">
+        <div class="page-title-container">
+          <h3 class="page-title">Dashboard</h3>
+          <div class="view-icon-container">
+            <img class="view-icon" *ngIf="isGridView" (click)="onGridView()" src="/assets/images/ic-grid-active.png">
+            <img class="view-icon" *ngIf="isGridView" (click)="onListView()" src="/assets/images/ic-list.png">
+            <img class="view-icon" *ngIf="!isGridView" (click)="onGridView()" src="/assets/images/ic-grid.png">
+            <img class="view-icon" *ngIf="!isGridView" (click)="onListView()" src="/assets/images/ic-list-active.png">
+            <i class="download-icon fa fa-download"></i>
+          </div>
+        </div>
+        <div class="filter-container">
+          <div class="select-container">
+            <ng-select
+              class="custom-selector"
+              [clearable]="false"
+              [searchable]="true"
+              [items]="posterGroups"
+              bindLabel="name"
+              placeholder="Select Poster"
+              [(ngModel)]="selectedPosterGroup"
+              (change)="onChangePosterGroup($event)">
+            </ng-select>
+          </div>
+          <div class="select-container">
+            <ng-select
+              class="custom-selector"
+              [clearable]="false"
+              [searchable]="true"
+              [items]="postFilterGroups"
+              bindLabel="name"
+              placeholder="Choose Filter"
+              [(ngModel)]="selectedFilterGroup"
+              (change)="onChangePostFilter($event)">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

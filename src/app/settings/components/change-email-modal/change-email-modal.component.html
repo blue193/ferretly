@@ -1,0 +1,21 @@
+<div class="modal-body credit-card-container">
+  <form [formGroup]="emailForm" (ngSubmit)="confirm()">
+    <div class="header-container">
+      <div class="title-container">
+        <span class="title">Update Your Information</span>
+      </div>
+    </div>
+
+    <div class="body-container">
+      <div class="info-container">
+        <div class="info-wrapper">
+          <input type="email" placeholder="Email Address" class="input-handle" formControlName="email">
+        </div>
+      </div>
+      <div class="action-container">
+        <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+        <button class="btn btn-success" type="submit" [ngClass]="{disabled: !emailForm.valid}" [disabled]="!emailForm.valid">Save Changes</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,62 @@
+<nav class="navbar custom-navbar bg-faded main-header px-3">
+
+  <a href="javascript:;" class="nav-link pl-0 d-lg-none" (click)="toggleSidenav.emit()">
+    <i class="icon ion-android-menu"></i>
+  </a>
+
+  <span class="navbar-heading mr-3">
+    <img class="logo" src="assets/images/logo.png" />
+  </span>
+
+  <span class="mr-auto"></span>
+
+  <form class="form-search form-inline ml-3 d-none d-sm-block header-filter-wrapper">
+    <div class="d-flex align-items-center">
+      <i class="icon ion-ios-search mr-2"></i>
+      <input class="form-control border-0 no-bg fw-300" type="text" placeholder="Search people and posts">
+    </div>
+  </form>
+
+  <ul class="navbar-nav mx-3">
+    <li class="nav-item" ngbDropdown placement="bottom-right">
+      <a href="javascript:;" class="nav-link" ngbDropdownToggle container="body" placement="bottom" ngbTooltip="Notifications">
+        <i class="fa fa-bell icon-notification"></i>
+        <span class="badge badge-danger">4</span>
+      </a>
+      <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right notification-menu">
+        <div class="read-all-container">
+          <span class="read-all-mark">Mark all as read</span>
+        </div>
+        <a class="dropdown-item" href="javascript:;" *ngFor="let notification of notifications">
+          <div class="notification-item-container">
+            <span class="notification-type-container" [style.border-color]="notification.color"></span>
+            <div class="notification-item-body">
+              <span class="notification-name">{{notification.name}}</span>
+              <span class="notification-date">{{notification.date}}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav">
+    <li class="nav-item" ngbDropdown placement="bottom-right">
+      <a href="javascript:;" class="nav-link" ngbDropdownToggle>
+        <span class="widget-icon rounded-circle bg-secondary text-white d-none d-md-inline-block">JG</span>
+        <span class="ml-2">Jack Gold</span>
+      </a>
+      <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" (click)="onClickMyAccount()">
+          <span>My Account</span>
+        </a>
+        <a class="dropdown-item" href="javascript:;">
+          <span>Help</span>
+        </a>
+        <a class="dropdown-item" href="javascript:;">
+          <span>Sign out</span>
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>

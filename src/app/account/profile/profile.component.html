@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="tool-bar">
+        <h3 class="page-title">My Account</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="row">
+        <div class="col-sm-6">
+          <form class="group-container" [formGroup]="accountForm" (ngSubmit)="updateInfo()">
+            <h3 class="group-title">General Information</h3>
+            <div class="group-body-container">
+              <div class="flex-container">
+                <div class="input-container">
+                  <label class="input-label">first name</label>
+                  <input class="input-control" formControlName="firstName">
+                </div>
+                <div class="input-container">
+                  <label class="input-label">last name</label>
+                  <input class="input-control" formControlName="lastName">
+                </div>
+              </div>
+              <div>
+                <div class="input-container">
+                  <label class="input-label">company name</label>
+                  <input class="input-control" formControlName="companyName">
+                </div>
+              </div>
+              <div>
+                <div class="input-container">
+                  <label class="input-label">email</label>
+                  <input type="email" class="input-control" formControlName="email">
+                </div>
+              </div>
+              <div>
+                <div class="input-container">
+                  <label class="input-label">password</label>
+                  <input type="password" class="input-control" formControlName="password">
+                </div>
+              </div>
+              <div>
+                <div class="input-container">
+                  <label class="input-label">confirm password</label>
+                  <input type="password" class="input-control" formControlName="confirmPassword">
+                </div>
+              </div>
+            </div>
+            <div class="action-container">
+              <button class="btn btn-success full-width" type="submit" [ngClass]="{disabled: !accountForm.valid}" [disabled]="!accountForm.valid">Update Information</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="group-container">
+            <h3 class="group-title">Payment Options</h3>
+            <div class="group-body-container">
+              <div class="flex-container">
+                <span class="label">Credit Card</span>
+                <span class="card-link" (click)="updateCreditCardInfo()">AMEX: *****1104</span>
+              </div>
+            </div>
+          </div>
+          <div class="group-container">
+            <h3 class="group-title">Background Search Credits</h3>
+            <div class="group-body-container">
+              <div class="circle-chart-container">
+                <div class="background-comment-container">
+                  <p class="sidebar-circle-chart-comment">You have {{backgroundCheck}} background checks remaining.</p>
+                  <p class="sidebar-circle-chart-comment">Use the section below to add additional background search credits.</p>
+                </div>
+                <div class="circle-chart">
+                  <div class="c100 dark green p40">
+                    <span class="circle-chart-value">
+                      40%
+                    </span>
+                    <span class="circle-chart-value-comment">2 of 5 Used</span>
+                    <div class="slice">
+                      <div class="bar"></div>
+                      <div class="fill"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-container">
+            <h3 class="group-title">Add Additional Credits</h3>
+            <div class="group-body-container">
+              <p class="comment">
+                Choose a base package, or your orginal custom package, or choose another number of background checks for a different custom package.
+              </p>
+              <div class="custom-radio-container">
+                <label class="custom-radio">1 Background Check Credit ($29)
+                  <input type="radio" checked="checked" name="radio" [value]="1" [(ngModel)]="creditsOption" (ngModelChange)="onChangeCreditOption($event)">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="custom-radio-container">
+                <label class="custom-radio">5 Background Check Credits ($115)
+                  <input type="radio" checked="checked" name="radio" [value]="5" [(ngModel)]="creditsOption" (ngModelChange)="onChangeCreditOption($event)">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="custom-radio-container">
+                <label class="custom-radio">10 Background Check Credits ($195)
+                  <input type="radio" checked="checked" name="radio" [value]="10" [(ngModel)]="creditsOption" (ngModelChange)="onChangeCreditOption($event)">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="custom-radio-container">
+                <label class="custom-radio">Custom Plan
+                  <input type="radio" checked="checked" name="radio" [value]="-1" [(ngModel)]="creditsOption" (ngModelChange)="onChangeCreditOption($event)">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="additional-credit-container" *ngIf="creditsOption === -1">
+                <div class="flex-container" *ngIf="!showCustomPlanQuote">
+                  <input class="input-credit" type="number" min="1" max="500" placeholder="Enter the number of credits and click on Get Quote"
+                          [(ngModel)]="customCredit" (ngModelChange)="onChangeCustomCredit($event)">
+                  <button class="btn btn-success btn-add-credit" [ngClass]="{'disabled': !isEnabledCustomBtn}" (click)="getQuote()">Get Quote</button>
+                </div>
+                <div class="flex-container" *ngIf="showCustomPlanQuote">
+                  <span>Your price for {{customCredit}} background checks is $xx.xx</span>
+                  <button class="btn btn-success btn-add-credit" (click)="getAnotherQuote()">Get Another Quote</button>
+                </div>
+              </div>
+            </div>
+            <div class="action-container">
+              <button class="btn btn-success" [ngClass]="{'disabled': !isEnabledAddBtn}" (click)="openConfirmModal()">Add To My Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

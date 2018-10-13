@@ -1,0 +1,115 @@
+.credit-card-container {
+  background-color: #333b4e;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3rem 2.5rem;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .logo {
+        width: 60px;
+        height: 60px;
+      }
+
+      .title {
+        font-size: 34px;
+        padding: 0 30px;
+      }
+    }
+
+    .comment {
+      padding: 10px 40px;
+      font-size: 14px;
+    }
+  }
+
+  .body-container {
+    margin-bottom: 2rem;
+    font-size: 14px;
+
+    .info-container {
+      padding: 20px 50px;
+      .info-wrapper {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        align-items: center;
+
+        &.security-card-wrapper {
+          align-items: flex-end;
+        }
+        .credit-card-security-wrapper {
+          flex: 1 1 60%;
+          display: flex;
+          .security-month {
+            flex: 1 1 15%;
+          }
+          .security-year {
+            flex: 1 1 15%;
+            margin: 0 10px;
+          }
+          .security-code {
+            flex: 1 1 70%;
+          }
+        }
+        .credit-card-image-wrapper {
+          flex: 1 1 40%;
+          padding-left: 10px;
+          .credit-card-image {
+            width: 100%;
+          }
+        }
+
+        .input-handle {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.7);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background-color: transparent;
+      cursor: pointer;
+      border-color: #5fd400;
+      color: #ffffff;
+      margin: 0 10px;
+      min-width: 150px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #5fd400
+      }
+
+      &.disabled {
+        border-color: rgba(255, 255, 255, 0.7);
+        background-color: transparent;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+input:focus {
+  outline: none
+}

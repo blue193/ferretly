@@ -1,0 +1,38 @@
+<div class="modal-body credit-card-container">
+  <form [formGroup]="creditForm" (ngSubmit)="confirm()">
+    <div class="header-container">
+      <div class="title-container">
+        <span class="title">Update Your Payment Information</span>
+      </div>
+      <span class="comment">
+        Use this page to enter your credit card payment details. Please review the information prior to clicking Save Changes.
+      </span>
+    </div>
+
+    <div class="body-container">
+      <div class="info-container">
+        <div class="info-wrapper">
+          <input type="text" placeholder="Name on Card" class="input-handle" formControlName="userName">
+        </div>
+        <div class="info-wrapper">
+          <input type="text" placeholder="Credit Card" class="input-handle" formControlName="creditCard">
+        </div>
+        <div class="info-wrapper security-card-wrapper">
+          <div class="credit-card-security-wrapper">
+            <input type="number" placeholder="MM" class="input-handle security-month" formControlName="month">
+            <input type="number" placeholder="YY" class="input-handle security-year" formControlName="year">
+            <input type="text" placeholder="Security Code" class="input-handle security-code" formControlName="securityCode">
+          </div>
+          <div class="credit-card-image-wrapper">
+            <img src="/assets/images/credit-logos.png" class="credit-card-image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-container">
+      <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+      <button class="btn btn-success" type="submit" [ngClass]="{disabled: !creditForm.valid}" [disabled]="!creditForm.valid">Save Changes</button>
+    </div>
+  </form>
+</div>

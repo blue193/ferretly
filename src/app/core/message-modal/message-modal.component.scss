@@ -1,0 +1,41 @@
+.message-modal-container {
+  background-color: #333b4e;
+  color: rgba(255, 255, 255, 0.7);
+  .modal-header {
+    border-bottom: 1px solid #e9ecef33;
+    .close {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  .modal-body {
+    font-size: 16px;
+    // text-align: center;
+    padding: 30px;
+  }
+  .action-container {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      background-color: transparent;
+      cursor: pointer;
+      border-color: #5fd400;
+      color: #ffffff;
+      margin: 0 10px;
+      min-width: 150px;
+      font-size: 16px;
+      &:hover {
+        background-color: #5fd400
+      }
+      &.disabled {
+        border-color: rgba(255, 255, 255, 0.7);
+        cursor: not-allowed;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  input:focus {
+    outline: none
+  }
+}

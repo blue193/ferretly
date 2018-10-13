@@ -1,0 +1,171 @@
+.flex-container {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-column-direction {
+  flex-direction: column;
+}
+
+.bottom-line-card {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+}
+
+.grid-container {
+  margin: 0 -5px;
+}
+
+.grid {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-card {
+  display: block;
+  position: absolute;
+  width: 25%;
+  z-index: 1;
+}
+
+.card {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 5px 10px;
+  border: 2px solid #465267;
+
+  &.selected {
+    border: 2px solid #4db53c;
+  }
+}
+
+.card.muuri-item-dragging {
+  z-index: 3;
+}
+
+.card.muuri-item-releasing {
+  z-index: 2;
+}
+
+.card.muuri-item-hidden {
+  z-index: 0;
+}
+
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-card-avatar {
+  height: 40px;
+}
+
+.grid-card-user-info {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: rgba(255, 255, 255, 0.7);
+
+  span {
+    padding: 0 5px;
+
+    &.user-name {
+      font-weight: bold;
+    }
+  }
+}
+
+.grid-card-post-image {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.grid-card-post-content {
+  text-align: left;
+}
+
+.ico-grid-card-share {
+  font-size: 18px;
+}
+
+.social-logo {
+  height: 40px;
+}
+
+.grid-card-footer {
+  padding: 0.5rem 1.25rem;
+
+  .post-date-wrapper {
+    display: flex;
+    align-items: center;
+
+    .img-retweet {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    .post-time {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.card-action-container {
+  display: flex;
+  align-items: start;
+
+  .post-action-wrapper {
+    .more-action {
+      font-size: 30px;
+    }
+  }
+
+  .post-status-wrapper {
+    margin-left: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &.hide {
+      display: none;
+    }
+
+    .img-vote {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .grid-card {
+    width: 33.33%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .grid-card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .grid-card {
+    width: 100%;
+  }
+}

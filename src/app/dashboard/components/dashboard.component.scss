@@ -1,0 +1,273 @@
+@import '~@angular/material/theming';
+
+:host ::ng-deep {
+  .chart-container {
+    height: 170px !important;
+    width: 100%;
+    display: block;
+  }
+
+  .gauge-container {
+    height: 200px !important;
+    width: 100%;
+    display: block;
+
+    .gauge {
+      &.chart {
+        tspan:last-child {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+
+  .advanced-pie-chart-container {
+    min-width: 1000px;
+  }
+
+  .pie-chart-container {
+    height: 200px;
+    width: 100%;
+    display: block;
+
+    .advanced-pie-legend {
+      .total-value {
+        font-size: 24px;
+      }
+
+      .total-label {
+        font-size: 20px;
+      }
+
+      .legend-items-container .legend-items .legend-item .item-value {
+        font-size: 18px;
+      }
+
+      .legend-items-container .legend-items .legend-item .item-label {
+        font-size: 14px;
+      }
+
+      .legend-items-container .legend-items .legend-item .item-percent {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .keyword-chart-container {
+    height: 300px;
+    width: 100%;
+    display: block;
+  }
+
+  .ngx-charts .gridline-path {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 0.5;
+  }
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .post-comment {
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+
+    .title {
+      font-size: 12px;
+    }
+  }
+}
+
+.tool-bar-mobile {
+  display: none;
+}
+
+.tool-bar {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+
+    .page-title {
+      margin-bottom: 0;
+    }
+
+    .select-container {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+  }
+
+  label {
+    padding: 0 10px;
+    margin-bottom: 0;
+  }
+
+  .icon-print {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 20px;
+  }
+}
+
+.post-content-wrapper {
+  .last-card {
+    margin-bottom: 0;
+  }
+}
+
+.recent-post-wrapper {
+  .recent-post-body {
+    height: 550px;
+    overflow: auto;
+  }
+
+  .post-card-container {
+    display: flex;
+
+    .icon-social {
+      border-radius: 0;
+    }
+
+    .post-content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 56px);
+
+      .post-title {
+        width: 70%;
+        margin-bottom: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .post-date {
+        width: 30%;
+        text-align: right;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .post-content {
+    padding-bottom: 10px;
+  }
+
+  .img-post-content {
+    width: 100%;
+  }
+}
+
+.badge-card-container {
+  background-color: transparent;
+  border: 3px solid;
+
+  .badge-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem;
+    cursor: pointer;
+
+    .badge-value {
+      font-size: 24px;
+    }
+
+    .badge-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.gauge-chart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .gauge-label {
+    position: absolute;
+    // top: 50%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .advanced-pie-chart-container {
+    min-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .advanced-pie-chart-container {
+    min-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .flex-wrapper {
+    .recent-post-wrapper {
+      margin-top: 10px;
+    }
+  }
+
+  .gauge-chart-container {
+    .gauge-label {
+      left: 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .gauge-chart-container {
+    .gauge-label {
+      left: 0;
+    }
+  }
+
+  .tool-bar {
+    display: none;
+  }
+
+  .tool-bar-mobile {
+    display: block;
+    padding: 10px 20px;
+
+    .page-title-container {
+      display: flex;
+      padding: 0 0 20px;
+      justify-content: space-between;
+
+      .page-title {
+        margin-bottom: 0;
+      }
+
+      label {
+        padding: 0 10px;
+        margin-bottom: 0;
+      }
+
+      .icon-print {
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    .filter-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

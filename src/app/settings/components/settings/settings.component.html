@@ -1,0 +1,157 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="tool-bar">
+        <h3 class="page-title">Settings</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="group-container">
+            <h3 class="group-title">Risk Classifiers and Custom Keywords</h3>
+            <div class="group-body-container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="switch-container">
+                    <label class="switch-label">Bullying/Insults</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Self Harm</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Narcotics</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Threat of Violence</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Political Extremism</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="switch-container">
+                    <label class="switch-label">Toxic Language</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Obscene Language</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Hate Speech</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Drugs and Drug Use Images</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                  <div class="switch-container">
+                    <label class="switch-label">Explicit/Violent Images</label>
+                    <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" checked></ui-switch>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="group-body-container">
+              <div class="switch-container">
+                <label class="switch-label">Custom Keywords and Phrases</label>
+                <ui-switch size="small" defaultBgColor="grey" defaultBoColor="#465267" [(ngModel)]="isEnabledKeyword" (change)="onChangeKeywords($event)"></ui-switch>
+              </div>
+              <div class="line"></div>
+              <div class="keywords-input-container">
+                <tag-input [(ngModel)]='items'
+                          [disable]="!isEnabledKeyword"
+                          (onSelect)="onSelected($event)"
+                          (onRemove)="onItemRemoved($event)">
+                </tag-input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="group-container">
+            <h3 class="group-title">General Settings</h3>
+            <div class="group-body-container">
+              <div class="checkbox-container">
+                <label class="custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="isEnabledBackgroundReport">
+                  <span class="checkmark"></span>
+                </label>
+                <span class="checkbox-label">
+                  Email me the Background Report upon Completion to:
+                  <a class="link" (click)="onChangeEmail()">{{email}}</a>
+                </span>
+              </div>
+              <div class="checkbox-container">
+                <label class="custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="isEnabledNegativeSentiment">
+                  <span class="checkmark"></span>
+                </label>
+                <span class="checkbox-label">Include negative sentiment Posts on the report</span>
+              </div>
+              <div class="checkbox-container">
+                <label class="custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="isEnabledPositiveSentiment">
+                  <span class="checkmark"></span>
+                </label>
+                <span class="checkbox-label">Include positive sentiment Posts on the report</span>
+              </div>
+              <div class="checkbox-container">
+                <label class="custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="isEnabledFlaggedPost">
+                  <span class="checkmark"></span>
+                </label>
+                <span class="checkbox-label">Include flagged posts and images on report</span>
+              </div>
+            </div>
+          </div>
+          <div class="group-container">
+            <h3 class="group-title">Social Media Integrations</h3>
+            <div class="group-body-container">
+              <span>
+                Enter the Facebook account and password you want to use to retrieve your candidate's Facebook posts.
+                Your account will remain completely anonymous to the candidate.
+              </span>
+            </div>
+          </div>
+          <div class="group-container">
+            <form [formGroup]="settingsForm" (ngSubmit)="updateInfo()">
+              <div class="group-body-container">
+                <div class="input-container">
+                  <label class="input-label">
+                    <img src="/assets/images/facebook-logo.png" class="logo-facebook">
+                    Facebook Username
+                  </label>
+                  <input class="input-control" formControlName="userName">
+                </div>
+                <div class="input-container">
+                  <label class="input-label">Password</label>
+                  <input class="input-control" type="password" formControlName="password">
+                </div>
+                <div class="input-container">
+                  <label class="input-label">Confirm Password</label>
+                  <input class="input-control" type="password" formControlName="confirmPassword">
+                </div>
+              </div>
+              <div class="action-container">
+                <button class="btn btn-success" type="submit" [ngClass]="{disabled: !settingsForm.valid}" [disabled]="!settingsForm.valid">Verify and Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

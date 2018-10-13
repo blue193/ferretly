@@ -1,0 +1,22 @@
+<!-- main navigation -->
+<nav class="menu" *ngIf="!options.settings">
+  <app-menu></app-menu>
+</nav>
+
+<nav class="navbar custom-navbar sidebar-footer">
+  <ul class="navbar-nav row no-gutters w-100">
+    <li class="nav-item w-100 docked-hidden sidebar-circle-chart">
+      <div class="c100 dark green p40">
+        <span class="circle-chart-value">
+          40%
+        </span>
+        <span class="circle-chart-value-comment">2 of 5 Used</span>
+        <div class="slice">
+          <div class="bar"></div>
+          <div class="fill"></div>
+        </div>
+      </div>
+      <p class="sidebar-circle-chart-comment" (click)="openBgCheckModal()">{{backgroundCheck}} background checks remaining</p>
+    </li>
+  </ul>
+</nav>

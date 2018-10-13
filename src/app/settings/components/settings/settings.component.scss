@@ -1,0 +1,215 @@
+.page-title {
+  margin-bottom: 0;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.link {
+  color: #69d500 !important;
+  cursor: pointer;
+  text-decoration: underline !important;
+}
+
+.logo-facebook {
+  width: 25px;
+}
+
+.group-container {
+  padding: 0 40px 20px;
+  color: #ffffffb3;
+
+  &:first-child {
+    padding: 20px 40px;
+  }
+
+  .group-title {
+    border-bottom: 1px solid #ffffffb3;
+    padding-bottom: 10px;
+  }
+  .group-body-container {
+    padding: 10px;
+    font-size: 15px;
+
+    .switch-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+
+      .switch-label {
+        margin-bottom: 0;
+        font-size: 18px;
+      }
+
+      ::ng-deep {
+        .switch-medium {
+          width: 70px;
+          height: 30px;
+          border-radius: 10px;
+
+          &.checked {
+            small {
+              left: 40px;
+            }
+          }
+        }
+      }
+    }
+    .line {
+      border-bottom: 1px solid;
+      margin: 10px 0;
+    }
+    .keywords-input-container {
+      min-height: 300px;
+      background-color: #353a4f;
+      ::ng-deep {
+        .ng2-tag-input {
+          height: 100% !important;
+          border-bottom: none;
+          padding: 10px;
+          min-height: 300px;
+          .ng2-tags-container {
+            tag {
+              border-radius: 5px !important;
+              background-color: #235fb4 !important;
+              color: #ffffffb3 !important;
+              height: 100% !important;
+              box-shadow: none !important;
+              margin: 0.2rem;
+              line-height: 25px;
+              &:hover, &:active {
+                background-color: #235fb4 !important;
+                color: #ffffffb3 !important;
+                box-shadow: none;
+              }
+              delete-icon {
+                &:hover {
+                  transform: none !important;
+                }
+                svg {
+                  height: 27px;
+                  path {
+                    fill: #ffffff !important;
+                  }
+                }
+              }
+            }
+            tag-input-form {
+              .ng2-tag-input__text-input {
+                background-color: transparent;
+                color: #c9cbd1;
+                border-bottom: 1px solid #ffffff8f;
+                height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+      min-width: 240px;
+
+      .input-label { }
+      .input-control {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #ffffffb3;
+        outline: none;
+        color: #ffffffb3;
+        padding: 5px;
+        font-size: 16px;
+      }
+    }
+    .card-link {
+      color: #69d500;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .circle-chart-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .c100 > span {
+        line-height: initial;
+      }
+      .c100.dark.green {
+        margin-bottom: 10px;
+      }
+      .circle-chart-value {
+        color: #5a6070;
+        top: 1.4em;
+        font-size: 28px;
+      }
+      .circle-chart-value-comment {
+        color: #5a6070;
+        font-size: 10px;
+        top: 7.5em;
+      }
+      .sidebar-circle-chart-comment {
+        color: #9195a0;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .comment {
+      margin-bottom: 20px;
+    }
+    .additional-credit-container {
+      padding-top: 30px;
+      .input-credit {
+        background-color: transparent;
+        border: 1px solid #ffffffb3;
+        width: 100%;
+        font-size: 14px;
+        padding: 7px;
+        margin-right: 10px;
+        outline: none;
+        color: #ffffffb3;
+      }
+      .btn-add-credit {
+        color: #ffffff;
+        font-size: 14px;
+        padding: 7px 25px;
+        background-color: #4fd529;
+        border-color: #4fd529;
+      }
+    }
+  }
+  .action-container {
+    text-align: right;
+    width: 100%;
+    padding: 20px 10px;
+    button {
+      color: #ffffff;
+      font-size: 22px;
+      padding: 5px 20px;
+      background-color: #4fd529;
+      border-color: #4fd529;
+      width: 100%;
+
+      &.disabled {
+        border-color: rgba(255, 255, 255, 0.7);
+        background-color: transparent;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="modal-body profile-search-container">
+  <div class="header-container">
+    <img class="logo" [src]="profileTypeImage"/>
+    <span class="title">Choose a {{searchType}} Profile from List</span>
+  </div>
+
+  <div class="body-container">
+    <div class="profile-list-container">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12" *ngFor="let subject of filteredSubjects">
+          <div class="profile-card-container" [ngClass]="{selected: subject === selectedSubject}" (click)="selectSubject(subject)">
+            <div class="avatar-container">
+              <img class="avatar" [src]="subject.avatar" />
+            </div>
+            <div class="profile-info-container">
+              <span class="profile-name">{{subject.name}}</span>
+              <span class="profile-handle">{{subject[handleType]}}</span>
+              <span class="profile-bio">{{subject.biography}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-container">
+    <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+    <button class="btn btn-success" [ngClass]="{disabled: !selectedSubject}" (click)="save()">Save and Return</button>
+  </div>
+</div>
