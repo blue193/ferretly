@@ -29,8 +29,12 @@ import {
 } from './core';
 import { environment } from '../environments/environment';
 import { SharedService } from './shared/service/shared.service';
+import { RoleGuardService } from './shared/service/role-guard.service';
+import { AuthService } from './shared/service/auth.service';
+import { AuthGuardService } from './shared/service/auth-guard.service';
 import { FBConfirmModalComponent } from './core/fb-confirm-modal/fb-confirm-modal.component';
 import { LoginComponent } from './login/login.component';
+import { LeaveComponent } from './leave/leave.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +54,8 @@ export function createTranslateLoader(http: HttpClient) {
     AccordionDirective,
     MessageModalComponent,
     FBConfirmModalComponent,
-    LoginComponent
+    LoginComponent,
+    LeaveComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,7 @@ export function createTranslateLoader(http: HttpClient) {
     MessageModalComponent,
     FBConfirmModalComponent
   ],
-  providers: [SharedService],
+  providers: [SharedService, RoleGuardService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

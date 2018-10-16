@@ -29,3 +29,30 @@
     line-height: 16px;
   }
 }
+
+.btn {
+  border-radius: 0px !important;
+  color: #fff;
+  &:hover {
+    background-color:  #5fd400;
+  }
+}
+
+#nav-link {
+  text-decoration: underline;
+}
+
+a.nav-link:hover {
+  text-decoration: underline;
+  color: white !important;
+}
+
+.main-header {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.main-footer {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,50 @@
+@import "../../assets/styles/app.scss";
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 64vh;
+    height: 100vh;
+    line-height: inherit;
+    .content {
+        h1, h5 {
+            color: $gray-color;
+            width: 100%;
+        }
+        a {
+            color: white;
+            font-weight: bold;
+        }
+        span {
+            color: $gray-color;
+        }
+        .paragraph {
+            border-top: 1px solid #ffffffb3;
+            border-bottom: 1px solid #ffffffb3;
+            margin-top: 25px;
+            padding: 26px 6px;
+            color: $gray-color;         
+        }
+        button {
+            margin: 20px 14px;
+            width: 12vh;
+            height: 5vh;
+            font-size: 19px;
+            color: white;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 0px !important;
+            // border-color: $green-color;
+            &:hover {
+                background-color: $green-color;
+            }
+        }
+    }
+    .footer {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+    }
+}
+

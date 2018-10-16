@@ -1,0 +1,183 @@
+@import "../../assets/styles/app.scss";
+
+.page-title {
+    margin-bottom: 0;
+  }
+  
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.logo-facebook {
+  width: 200px;
+}
+  
+.group-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 128px);
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 0 40px 20px;
+  color: #ffffffb3;
+
+  &:first-child {
+    padding: 20px 40px;
+  }
+
+  .group-title {
+    border-bottom: 1px solid #ffffffb3;
+    padding-bottom: 10px;
+  }
+  .group-body-container {
+    width: 52vh;
+    padding: 10px;
+    font-size: 15px;
+    .switch-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+
+      .switch-label {
+        margin-bottom: 0;
+        font-size: 18px;
+      }
+
+      ::ng-deep {
+        .switch-medium {
+          width: 70px;
+          height: 30px;
+          border-radius: 10px;
+
+          &.checked {
+            small {
+              left: 40px;
+            }
+          }
+        }
+      }
+    }
+    .line {
+      border-bottom: 1px solid;
+      margin: 10px 0;
+    }
+    .keywords-input-container {
+      min-height: 300px;
+      background-color: #353a4f;
+      ::ng-deep {
+        .ng2-tag-input {
+          height: 100% !important;
+          border-bottom: none;
+          padding: 10px;
+          min-height: 300px;
+          .ng2-tags-container {
+            tag {
+              border-radius: 5px !important;
+              background-color: #235fb4 !important;
+              color: #ffffffb3 !important;
+              height: 100% !important;
+              box-shadow: none !important;
+              margin: 0.2rem;
+              line-height: 25px;
+              &:hover, &:active {
+                background-color: #235fb4 !important;
+                color: #ffffffb3 !important;
+                box-shadow: none;
+              }
+              delete-icon {
+                &:hover {
+                  transform: none !important;
+                }
+                svg {
+                  height: 27px;
+                  path {
+                    fill: #ffffff !important;
+                  }
+                }
+              }
+            }
+            tag-input-form {
+              .ng2-tag-input__text-input {
+                background-color: transparent;
+                color: #c9cbd1;
+                border-bottom: 1px solid #ffffff8f;
+                height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+      min-width: 240px;
+
+      .input-logo { 
+          text-align: center;
+      }
+      .input-control {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #ffffffb3;
+        outline: none;
+        color: #ffffffb3;
+        padding: 5px;
+        font-size: 16px;
+        flex-grow: 1;
+      }
+      .input-group {
+          .input-group-button {
+              border-bottom: 1px solid #ffffffb3;
+          }
+          .question {
+              width: 28px;
+              height: 28px;
+              border: 2px solid $green-color;
+              border-radius: 8px;
+              text-align: center;
+              display: inline-block;
+              padding: 4px;
+              line-height: 16px;
+              font-size: 16px;
+              color: white;
+              background: transparent;
+          }
+      }
+      }
+  }
+  .action-container {
+    text-align: right;
+    width: 100%;
+    padding: 20px 10px;
+    button {
+      color: #ffffff;
+      font-size: 22px;
+      padding: 5px 20px;
+      border-color: $green-color;
+      // border-color: red;
+      width: 100%;
+      border-radius: 0px !important;
+      .border-color {
+          &:hover {
+              background-color: $green-color !important;
+          }
+      }
+      &.disabled {
+        border-color: rgba(255, 255, 255, 0.7);
+        background-color: transparent;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: #5fd400;;
+        }
+      }
+    }
+  }
+}
+  
