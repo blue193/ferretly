@@ -132,8 +132,14 @@
         flex-grow: 1;
       }
       .input-group {
-          .input-group-button {
-              border-bottom: 1px solid #ffffffb3;
+          .d-inline-block {
+            border-bottom: 1px solid;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          #dropdownBasic1::after {
+            display: none;
           }
           .question {
               width: 28px;
@@ -160,12 +166,11 @@
       font-size: 22px;
       padding: 5px 20px;
       border-color: $green-color;
-      // border-color: red;
       width: 100%;
       border-radius: 0px !important;
       .border-color {
           &:hover {
-              background-color: $green-color !important;
+              background-color: #4f5c69 !important;
           }
       }
       &.disabled {
@@ -174,7 +179,7 @@
         cursor: not-allowed;
 
         &:hover {
-          background-color: #5fd400;;
+          background-color: #5fd400 !important;
         }
       }
     }

@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vh;
+    height: calc(100vh - 128px);
+    color: #ffffffb3;
+    font-size: 17px;
+    .row {
+        font-size: 15px !important;
+        line-height: 18px;
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+        .content {
+            width: 100%;
+            margin: 21px 0px;
+        }
+        form {
+            width: 84%;
+            margin: 13px auto 14px auto;
+            .i-paypal {
+                width: 130px;
+            }
+            .i-credit {
+                width: 235px;
+            }
+            input {
+                border-radius: 0px !important;
+                background-color: #fff !important;
+            }
+        }
+        .border {
+            width: 100%;
+            margin: 0px 0px 48px 0px;
+            border-bottom: 1px solid #4f5c69 !important;
+        }
+        .custom-checkbox {
+            margin: 31px 31px 41px 67px;
+            font-size: 16px;
+            label {
+                .mark {
+                    font-weight: bold;
+                    font-size: 17px;
+                    background-color: transparent;
+                }
+            }
+            .custom-control-label::before {
+                border-radius: 0 !important;
+                width: 25px;
+                height: 25px;
+            }
+            .custom-control-label::after {
+                border-radius: 0 !important;
+                width: 25px;
+                height: 25px;
+            }
+        }
+        button {
+            width: 100%;
+            background-color: transparent !important;
+            color: white;
+            font-size: 19px !important;
+            width: 87%;
+            margin: auto;
+            border-radius: 0px !important;
+            &:hover {
+                background-color: #5fd400 !important;
+            }
+            
+        }
+    }
+}

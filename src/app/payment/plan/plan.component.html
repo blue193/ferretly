@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <h1>Your package</h1>
+    <div class="content">
+      <p>
+        Below is your plan selection which represents the number of social media background checks you want to run.
+        You will be billed immediately based on the package you choose. The credits can be used for background
+        searches at anytime from within the application.
+      </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li *ngFor="let plan of plans; let idx = index">
+          <div class="custom-radio-container">
+            <label class="custom-radio">
+            <input 
+              type="radio" 
+              name="radiogroup" 
+              [checked]="plan.id === selectedPlan.id" 
+              [value]="plan.id" 
+              (change)="selectPlan(plan)">
+              {{plan.description}}
+              <span class="checkmark"></span>
+            </label>
+            <button 
+              class="btn btn-success btn-sm text-white btn-bookmark" 
+              *ngIf="plan.id === selectedPlan.id">
+              Modify
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-outline-success btn-block text-white btn-take">Accept this selection and create my account</button>
+  </div>
+</div>

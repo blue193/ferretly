@@ -2,10 +2,28 @@
   <nav class="navbar custom-navbar bg-faded main-header px-3">
     <ul class="navbar-nav">
       <li class="nav-item">
-          <a class="nav-link">&lt; Back to <span class="navbar-text" id="nav-link">ferretly.com</span></a>
+          <a [routerLink]="['/login']"
+          [routerLinkActive]="['nav-active']"
+          [routerLinkActiveOptions]="{ exact: false }">&lt; Back to 
+          <span class="navbar-text" id="nav-link">ferretly.com</span>
+          </a>
+      </li>
+      <li class="nav-item" *ngIf="isSettingUrl">
+        <a [routerLink]="['/plan']"
+           [routerLinkActive]="['nav-active']"
+           [routerLinkActiveOptions]="{ exact: true }">1.Choose a plan</a>
+      </li>
+      <li class="nav-item" *ngIf="isSettingUrl">
+        <a [routerLink]="['/info']"
+           [routerLinkActive]="['nav-active']"
+           [routerLinkActiveOptions]="{ exact: false }">2.Your information</a>
+      </li>
+      <li class="nav-item" *ngIf="isSettingUrl">
+        <a [routerLink]="['/complete']"
+           [routerLinkActive]="['nav-active']"
+           [routerLinkActiveOptions]="{ exact: false }">3.Payment</a>
       </li>
     </ul>
-    
     <span class="mr-auto"></span>
   
     <ul class="navbar-nav">
@@ -13,7 +31,7 @@
             <a class="nav-link">Not a member?</a>
         </li>
       <li class="nav-item" placement="bottom-right">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+          <a class="btn btn-outline-success my-2 my-sm-0" routerLink="/plan" >Sign Up</a>
       </li>
     </ul>
   </nav>
