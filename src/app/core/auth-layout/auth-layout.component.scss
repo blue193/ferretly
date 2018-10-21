@@ -56,3 +56,9 @@ a.nav-link:hover {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
+
+.nav-item {
+  a.nav-active {
+    text-decoration: underline;
+  }
+}

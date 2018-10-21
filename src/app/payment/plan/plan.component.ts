@@ -32,8 +32,6 @@ export class PlanComponent implements OnInit {
   }
 
   selectPlan(plan) {
-    console.log("here")
-    console.log("here", plan);
     this.selectedPlan = plan;
   }
 

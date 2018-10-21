@@ -8,20 +8,17 @@
           <span class="navbar-text" id="nav-link">ferretly.com</span>
           </a>
       </li>
-      <li class="nav-item" *ngIf="isSettingUrl">
+      <li class="nav-item" *ngIf="isSettingPage">
         <a [routerLink]="['/plan']"
-           [routerLinkActive]="['nav-active']"
-           [routerLinkActiveOptions]="{ exact: true }">1.Choose a plan</a>
+           [routerLinkActive]="['nav-active']">1.Choose a plan</a>
       </li>
-      <li class="nav-item" *ngIf="isSettingUrl">
+      <li class="nav-item" *ngIf="isSettingPage">
         <a [routerLink]="['/info']"
-           [routerLinkActive]="['nav-active']"
-           [routerLinkActiveOptions]="{ exact: false }">2.Your information</a>
+           [routerLinkActive]="['nav-active']">2.Your information</a>
       </li>
-      <li class="nav-item" *ngIf="isSettingUrl">
+      <li class="nav-item" *ngIf="isSettingPage">
         <a [routerLink]="['/complete']"
-           [routerLinkActive]="['nav-active']"
-           [routerLinkActiveOptions]="{ exact: false }">3.Payment</a>
+           [routerLinkActive]="['nav-active']">3.Payment</a>
       </li>
     </ul>
     <span class="mr-auto"></span>
