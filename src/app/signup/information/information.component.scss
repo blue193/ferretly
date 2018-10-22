@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90vh;
     height: calc(100vh - 128px);
     color: #ffffffb3;
     font-size: 17px;
@@ -24,32 +23,25 @@
         form {
             width: 84%;
             margin: 13px auto 46px auto;
-            input {
-                border-radius: 0px !important;
-                background: #fff !important;
-            }
+            // input {
+            //     border-radius: 0px !important;
+            //     background: #fff !important;
+            // }
         }
         .border {
             width: 100%;
             margin: 10px 0;
             border-bottom: 1px solid #4f5c69 !important;
         }
-        .custom-checkbox {
-            margin: 31px 15px;
-            font-size: 16px;
-            .custom-control-label::before {
-                border-radius: 0 !important;
-                width: 20px;
-                height: 20px;
-            }
-            .custom-control-label::after {
-                border-radius: 0 !important;
-                width: 20px;
-                height: 20px;
-            }
-            span {
-                background: transparent;
-                text-decoration: underline;
+        .custom-display {
+            display: flex;
+            width: 79%;
+            margin: 25px auto 46px auto;
+            .checkbox-label {
+                .mark {
+                    text-decoration: underline;
+                    background: transparent;
+                }
             }
         }
         button {

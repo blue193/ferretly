@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <h1>Enter your payment information</h1>
+      <div class="content">
+        <p>
+            Use this page to enter your credit card payment details.
+            Please review the information prior to clicking submit. You are authorizing Ferretly International,
+            LLC to charge your credit card card in the amount shown below based upon the plan you chose. You will
+            be provided with the number of background search credits to your account which you can use at any time.
+        </p>
+      </div>
+      <form>
+        <div class="input-container input-group col-md-11 mx-auto">
+          <input type="text" class="input-control" placeholder="Name on Card">
+        </div>
+        <div class="input-container input-group col-md-11 mx-auto justify-content-between">
+              <input type="text" class="input-control col-md-7" placeholder="Credit Card#">
+              <input type="text" class="input-control col-md-4" placeholder="Discount Code">
+        </div>
+        <div class="input-container justify-content-between input-group col-md-11 mx-auto custom-padding">
+            <div class="col-5">
+                <input type="text" class="input-control col-md-3 custom-space" placeholder="MM">
+                <input type="text" class="input-control col-md-3 custom-space" placeholder="YY">
+                <input type="text" class="input-control col-md-5 custom-space" placeholder="Security Code">
+            </div>
+            <div class="col-7">
+                <div class="justify-content-center text-right custom-image">
+                    <img src="../../../assets/images/paypal.png" class="i-paypal">
+                    <img src="../../../assets/images/credit-logos.png" class="i-credit">
+                </div>
+            </div>
+            
+        </div>  
+      </form>
+      <div class="checkbox-container custom-display">
+        <label class="custom-checkbox">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <span class="checkbox-label custom-label">
+            I authorize the immediate payment of <span class="mark">$25 based on the Single Credit</span> plan chosen. 
+            I understand that I will be billed immediately and there are no refunds.
+        </span>
+       </div>
+      <span class="border"></span>
+      <button class="btn btn-success" (click)="nextTo()">Complete my purchase</button>
+    </div>
+  </div>

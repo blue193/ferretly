@@ -10,11 +10,11 @@
     </div>
     <span class="border"></span>
     <div class="list">
-      <div><span class="title-1">Account:</span> bill.smith@gmail.com</div>
+      <div><span class="title-1">Account:</span> {{mail}}</div>
       <div><span class="title-2">Web URL:</span> https://app.ferretly.com/login <button class="btn btn-success btn-sm text-white btn-bookmark">Bookmark</button></div>
     </div>
     <span class="border"></span>
-    <button class="btn btn-outline-success btn-block text-white btn-take">Take me to Ferretly</button>
+    <button class="btn btn-outline-success btn-block text-white btn-take" (click)="nextTo()">Take me to Ferretly</button>
     <div class="content-2">
       <p>
         You can contact support anytime at support@ferretly.com 

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Enter your account information</h1>
+      <div class="content">
+        <p>
+          Use this page to enter your name, email address and choose a password. Your information will never be shared and you will remain completely anonymous including to any of the social media profile handles you choose to monitor.
+          Please read our <span class="mark">terms of service</span> to understand more about your privacy.
+        </p>
+      </div>
+    </div>
+    <form>
+      <div class="input-container input-group col-md-12 justify-content-center">
+          <input class="input-control col-md-5" type="text" placeholder="Bill">
+          <input class="input-control col-md-5 offset-md-1" type="text" placeholder="Last name">
+      </div>
+      <div class="input-container input-group col-md-11 mx-auto">
+          <input class="input-control" type="text" placeholder="Company Name">
+      </div>
+      <div class="input-container input-group col-md-11 mx-auto">
+          <input type="text" [(ngModel)]="myEmail" name="first" class="input-control" placeholder="Email address">
+      </div>
+      <div class="input-container input-group col-md-12 justify-content-center">
+          <input class="input-control col-md-5" type="password" placeholder="Password">
+          <input class="input-control col-md-5 offset-md-1" type="password" placeholder="Confirm password">
+      </div>
+    </form>
+    <span class="border"></span>
+    <div class="checkbox-container custom-display">
+      <label class="custom-checkbox">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+      </label>
+      <span class="checkbox-label">
+          I acknowledge that I have read and accept the <span class="mark">terms of use agreement</span> and consent to the Privacy Policy.
+      </span>
+    </div>
+    <button class="btn btn-success" (click)="nextTo()">Create your account and go to payment</button>
+  </div>
+</div>

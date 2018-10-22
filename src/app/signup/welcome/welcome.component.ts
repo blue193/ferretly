@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-
-  constructor() { }
+  mail: string = '';
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.mail = localStorage.getItem("email");
   }
 
+  nextTo() {
+    this.router.navigate(['']);
+  }
 }

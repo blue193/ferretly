@@ -35,10 +35,6 @@ import { AuthGuardService } from './shared/service/auth-guard.service';
 import { FBConfirmModalComponent } from './core/fb-confirm-modal/fb-confirm-modal.component';
 import { LoginComponent } from './login/login.component';
 import { LeaveComponent } from './leave/leave.component';
-import { PlanComponent } from './payment/plan/plan.component';
-import { InformationComponent } from './payment/information/information.component';
-import { CompleteComponent } from './payment/complete/complete.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -60,10 +56,6 @@ export function createTranslateLoader(http: HttpClient) {
     FBConfirmModalComponent,
     LoginComponent,
     LeaveComponent,
-    PlanComponent,
-    InformationComponent,
-    CompleteComponent,
-    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +73,7 @@ export function createTranslateLoader(http: HttpClient) {
     LoadingBarRouterModule,
     NgbModule.forRoot(),
     MatSidenavModule,
-    LocalStorageModule.withConfig({prefix: environment.localStorage.prefix, storageType: 'localStorage'})
+    LocalStorageModule.withConfig({prefix: environment.localStorage.prefix, storageType: 'localStorage'}),
   ],
   entryComponents: [
     MessageModalComponent,

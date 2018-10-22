@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plan',
@@ -9,7 +10,7 @@ export class PlanComponent implements OnInit {
   plans: any[];
   selectedPlan: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.plans = [{
@@ -28,11 +29,14 @@ export class PlanComponent implements OnInit {
       id: 5,
       description: 'Custom Plan: 34 Background Check Cridits($476)'
     }];
-    this.selectedPlan = this.plans[1];
+    this.selectedPlan = this.plans[0];
   }
 
   selectPlan(plan) {
     this.selectedPlan = plan;
   }
 
+  nextTo() {
+    this.router.navigate ( [ '/signup/info' ] );
+  }
 }

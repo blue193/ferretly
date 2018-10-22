@@ -83,7 +83,7 @@ ngb-tabset {
 
 ::-webkit-scrollbar-track
 {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: map_get($mat-blue-grey, 900);
   border-radius: 5px;
 }
@@ -282,4 +282,37 @@ ui-switch .switch-small {
 
 .border-color {
   border-color: #5fd400;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 240px;
+
+  .input-logo { 
+      text-align: center;
+  }
+  .input-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffffb3;
+    outline: none;
+    color: #ffffffb3;
+    padding: 12px 0;
+    font-size: 16px;
+    flex-grow: 1;
+  }
+  .question {
+      width: 28px;
+      height: 28px;
+      border: 2px solid $green-color;
+      border-radius: 8px;
+      text-align: center;
+      display: inline-block;
+      padding: 4px;
+      line-height: 16px;
+      font-size: 16px;
+      color: white;
+      background: transparent;
+  }
 }

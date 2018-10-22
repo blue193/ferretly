@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HeaderComponent } from '../core/header/header.component';
 
@@ -9,14 +10,13 @@ import { HeaderComponent } from '../core/header/header.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   public login() {
-    console.log('click login');
-    return true;
+    this.router.navigate ( [ '' ] );
   }
 
 }

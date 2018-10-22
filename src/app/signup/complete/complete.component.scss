@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90vh;
     height: calc(100vh - 128px);
     color: #ffffffb3;
     font-size: 17px;
@@ -18,43 +17,40 @@
             margin: 21px 0px;
         }
         form {
-            width: 84%;
-            margin: 13px auto 14px auto;
-            .i-paypal {
-                width: 130px;
+            width: 79%;
+            margin: 13px auto 46px auto;
+            .custom-padding {
+                padding: 0;
             }
-            .i-credit {
-                width: 235px;
+            .custom-space {
+                margin-right: 0;
             }
-            input {
-                border-radius: 0px !important;
-                background-color: #fff !important;
+            .custom-image {
+                margin-left: auto;
+                .i-paypal {
+                    width: 36%;
+                    padding: 9px;
+                }
+                .i-credit {
+                    width: 56%;
+                }
             }
         }
         .border {
             width: 100%;
-            margin: 0px 0px 48px 0px;
+            margin: 0px 0px 40px 0px;
             border-bottom: 1px solid #4f5c69 !important;
         }
-        .custom-checkbox {
-            margin: 31px 31px 41px 67px;
-            font-size: 16px;
-            label {
+        .custom-display {
+            display: flex;
+            width: 79%;
+            margin: 13px auto 64px auto;
+            .checkbox-label {
                 .mark {
                     font-weight: bold;
-                    font-size: 17px;
+                    font-size: 16px;
                     background-color: transparent;
                 }
-            }
-            .custom-control-label::before {
-                border-radius: 0 !important;
-                width: 25px;
-                height: 25px;
-            }
-            .custom-control-label::after {
-                border-radius: 0 !important;
-                width: 25px;
-                height: 25px;
             }
         }
         button {
@@ -70,5 +66,13 @@
             }
             
         }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .i-paypal {
+        width: 15vh;
+    }
+    .i-credit {
+        width: 28vh;
     }
 }
