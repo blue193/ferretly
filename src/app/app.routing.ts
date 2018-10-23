@@ -44,12 +44,13 @@ export const AppRoutes: Routes = [{
     path: 'login',
     component: LoginComponent
   }, {
-    path: 'leave',
-    component: LeaveComponent
-  }, {
     path: 'error',
     loadChildren: './error/error.module#ErrorModule'
   }]
+},
+{
+  path: 'leave',
+  component: LeaveComponent
 },
 {
   path: '**',

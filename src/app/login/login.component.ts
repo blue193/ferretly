@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HeaderComponent } from '../core/header/header.component';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +7,16 @@ import { HeaderComponent } from '../core/header/header.component';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  
+  constructor(
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
   }
 
-  public login() {
+  login() {
     this.router.navigate ( [ '' ] );
   }
 

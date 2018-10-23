@@ -7,7 +7,7 @@ import { CompleteComponent } from './complete/complete.component';
 import { InformationComponent } from './information/information.component';
 import { PlanComponent } from './plan/plan.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SignupRoutingModule,
     NgbModule
   ],

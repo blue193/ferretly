@@ -5,6 +5,7 @@
     height: calc(100vh - 128px);
     color: #ffffffb3;
     font-size: 17px;
+    width: 79%;
     .row {
         font-size: 15px !important;
         line-height: 18px;
@@ -17,13 +18,16 @@
             margin: 21px 0px;
         }
         form {
-            width: 79%;
+            width: 90%;
             margin: 13px auto 46px auto;
-            .custom-padding {
-                padding: 0;
+            input {
+                width: 100%;
             }
-            .custom-space {
-                margin-right: 0;
+            .alert.alert-danger {
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                color: red;
             }
             .custom-image {
                 margin-left: auto;
@@ -35,37 +39,37 @@
                     width: 56%;
                 }
             }
-        }
-        .border {
-            width: 100%;
-            margin: 0px 0px 40px 0px;
-            border-bottom: 1px solid #4f5c69 !important;
-        }
-        .custom-display {
-            display: flex;
-            width: 79%;
-            margin: 13px auto 64px auto;
-            .checkbox-label {
-                .mark {
-                    font-weight: bold;
-                    font-size: 16px;
-                    background-color: transparent;
+            .border {
+                width: 100%;
+                margin: 62px 0;
+                border-bottom: 1px solid #4f5c69 !important;
+            }
+            .custom-display {
+                display: flex;
+                width: 100%;
+                margin: 25px auto 46px auto;
+                .checkbox-label {
+                    .mark {
+                        text-decoration: underline;
+                        background: transparent;
+                    }
                 }
             }
-        }
-        button {
-            width: 100%;
-            background-color: transparent !important;
-            color: white;
-            font-size: 19px !important;
-            width: 87%;
-            margin: auto;
-            border-radius: 0px !important;
-            &:hover {
-                background-color: #5fd400 !important;
+            .custom-submit {
+                text-align: center;
+                button {
+                    background-color: transparent !important;
+                    color: white;
+                    font-size: 19px !important;
+                    width: 90%;
+                    margin: auto;
+                    border-radius: 0px !important;
+                    &:hover {
+                        background-color: #5fd400 !important;
+                    }
+                }
             }
-            
-        }
+        } 
     }
 }
 @media only screen and (max-width: 768px) {

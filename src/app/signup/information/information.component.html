@@ -9,32 +9,52 @@
         </p>
       </div>
     </div>
-    <form>
-      <div class="input-container input-group col-md-12 justify-content-center">
-          <input class="input-control col-md-5" type="text" placeholder="Bill">
-          <input class="input-control col-md-5 offset-md-1" type="text" placeholder="Last name">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="input-container input-group col-md-12 justify-content-center p-0">
+        <div class="col-md-5 mx-auto">
+          <input class="input-control" type="text" name="bill"  id="bill" formControlName="bill" placeholder="Bill" required>
+          <div *ngIf="f.bill.invalid && (f.bill.dirty || f.bill.touched)" class="alert alert-danger">
+            <span>Biil Name must be filled!</span>
+          </div>
+        </div>
+        <div class="col-md-5 offset-md-1 mx-auto">
+          <input class="input-control" name="lastName" formControlName="lastName" id="lastName" type="text" placeholder="Last name" required>
+        </div>
       </div>
+
       <div class="input-container input-group col-md-11 mx-auto">
-          <input class="input-control" type="text" placeholder="Company Name">
+        <input class="input-control" type="text" name="companyName" formControlName="companyName" id="companyName" placeholder="Company Name" required>
       </div>
+
       <div class="input-container input-group col-md-11 mx-auto">
-          <input type="text" [(ngModel)]="myEmail" name="first" class="input-control" placeholder="Email address">
+        <input type="text" [(ngModel)]="myEmail" name="mailAddress" id="mailAddress" class="input-control" formControlName="mailAddress" placeholder="Email address" required>
+        <div *ngIf="f.mailAddress.invalid && (f.mailAddress.dirty || f.mailAddress.touched)" class="alert alert-danger">
+          <span *ngIf="f.mailAddress.errors.required">Email Address must be filled!</span>
+          <span *ngIf="f.mailAddress.errors.mailAddress">Email Address must be valid!</span>
+        </div>
       </div>
+
       <div class="input-container input-group col-md-12 justify-content-center">
-          <input class="input-control col-md-5" type="password" placeholder="Password">
-          <input class="input-control col-md-5 offset-md-1" type="password" placeholder="Confirm password">
+        <input class="input-control col-md-5" type="password" name="password" formControlName="password" id="password" placeholder="Password" required>
+        <input class="input-control col-md-5 offset-md-1" type="password" name="confirmPwd" formControlName="confirmPwd" id="confirmPwd" placeholder="Confirm password" required>
       </div>
-    </form>
-    <span class="border"></span>
-    <div class="checkbox-container custom-display">
-      <label class="custom-checkbox">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-      </label>
-      <span class="checkbox-label">
-          I acknowledge that I have read and accept the <span class="mark">terms of use agreement</span> and consent to the Privacy Policy.
-      </span>
-    </div>
-    <button class="btn btn-success" (click)="nextTo()">Create your account and go to payment</button>
+
+      <div class="border"></div>
+      
+      <div class="checkbox-container custom-display">
+        <label class="custom-checkbox">
+            <input type="checkbox" name="checked" formControlName="checked" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <span class="checkbox-label">
+            I acknowledge that I have read and accept the <span class="mark">terms of use agreement</span> and consent to the Privacy Policy.
+        </span>
+      </div>
+
+      <div class="col-12 custom-submit">
+        <button type="submit" class="btn btn-success" [disabled]="!contactForm.valid">Create your account and go to payment</button>
+      </div>
+
+    </form> 
   </div>
 </div>

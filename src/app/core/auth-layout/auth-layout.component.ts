@@ -18,6 +18,7 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
   isSettingPage: boolean = false;
   isLoginPage: boolean = false;
   isCompletePage   : boolean = false;
+  currentUrl: string;
 
   constructor(
     private router: Router,
@@ -27,6 +28,7 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
     .filter(event => event instanceof NavigationEnd)
     .subscribe((event:NavigationEnd) => {
       this.initFlags();
+      this.currentUrl = event.url;
       if (event.url === '/signup/welcome') {
         this.isCompletePage = true;
       } else if (event.url === '/login') {
@@ -53,6 +55,10 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
     this.isCompletePage = false;
     this.isLoginPage = false;
     this.isSettingPage = false;
+  }
+
+  isActive(path) {
+    return path == this.currentUrl;
   }
 
 }

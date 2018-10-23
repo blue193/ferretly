@@ -10,13 +10,13 @@
           </a>
       </li>
       <li class="nav-item" *ngIf="isSettingPage">
-        <a class="nav-active">1.Choose a plan</a>
+        <a class="nav-active" [ngClass]="isActive('/signup/plan') ? 'line' : 'unline'">1.Choose a plan</a>
       </li>
       <li class="nav-item" *ngIf="isSettingPage">
-        <a class="nav-active">2.Your information</a>
+        <a class="nav-active" [ngClass]="isActive('/signup/info') ? 'line' : 'unline'">2.Your information</a>
       </li>
       <li class="nav-item" *ngIf="isSettingPage">
-        <a class="nav-active">3.Payment</a>
+        <a class="nav-active" [ngClass]="isActive('/signup/complete') ? 'line' : 'unline'">3.Payment</a>
       </li>
     </ul>
     <span class="mr-auto"></span>

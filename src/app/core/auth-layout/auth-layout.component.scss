@@ -26,9 +26,14 @@ a.nav-link:hover {
 }
 
 .nav-item {
-  a.nav-active {
-    text-decoration: underline;
-  }
+  a.nav-active.line {
+      text-decoration: underline;
+    }
+  a.nav-active.unline {
+      text-decoration: none;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
 }
 
 img {
@@ -38,3 +43,4 @@ img {
   right: 40px;
   top: 19px;
 }
+
