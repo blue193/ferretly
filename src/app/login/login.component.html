@@ -1,22 +1,21 @@
-<div class="group-container">      
+<div class="container">      
   <div class="custom-container">
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-      <div class="group-body-container">
-        <div class="input-container col-12">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="login-form">
+        <div class="input-container custom-logo">
           <label class="input-logo">
             <img src="/assets/images/logo.png" class="logo-facebook">
           </label>
         </div>
-        <div class="input-container col-12">
-          <label class="input-label">EMAIL ADDRESS</label>
+        <div class="input-container custom-input custom-email">
+          <label class="input-label label-color">EMAIL ADDRESS</label>
           <input class="input-control" type="text" id="email" name="email" formControlName="email" required>
         </div>
-        <div class="input-container col-12">
-          <label class="input-label">PASSWORD</label>
+        <div class="input-container custom-input custom-password">
+          <label class="input-label label-color">PASSWORD</label>
           <div class="input-group">
             <input type="password" class="input-control" id="password" name="password" formControlName="password" required>
             <div class="input-group-prepend">
-              <div ngbDropdown  placement="bottom-right" class="d-inline-block">
+              <div ngbDropdown  placement="bottom-right" class="d-inline-block drop-down">
                 <span class="input-group-text question" id="dropdownBasic1" ngbDropdownToggle>?</span>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="li-forgot">
                   <a class="dropdown-item">Forgot Password</a>
@@ -26,11 +25,10 @@
               </div>
             </div> 
           </div>
-        </div>
       </div>
       <div class="action-container">
-          <button class="btn btn-outline-success" type="submit" [disabled]="!contactForm.valid">Login</button>
+        <button class="btn btn-outline-success btn-custom-login" type="submit" [disabled]="!contactForm.valid">Login</button>
       </div>
     </form>
   </div> 
-  </div>
+</div>

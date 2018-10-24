@@ -246,25 +246,64 @@ ui-switch .switch-small {
 
 @include media-breakpoint-up(lg) {
   .custom-container {
-    width: 70%;
+    width: 800px;
+    margin: auto;
+    .login-form {
+      padding: 0 150px;
+      .logo-facebook {
+        width: 200px;
+      }
+    }
   }
 }
 
 @include media-breakpoint-down(lg) {
   .custom-container {
-    width: 70%;
+    width: 800px;
+    margin: auto;
+    .login-form{
+      padding: 0 150px;
+      .logo-facebook {
+        width: 200px;
+      }
+    }
   }
 } 
 
 @include media-breakpoint-down(md) {
   .custom-container {
-    width: 80%;
+    width: 400px;
+    margin: auto;
+    .login-form{
+      padding: 0;
+      .logo-facebook {
+        width: 150px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .custom-container {
+    width: 100%;
+    margin: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    .login-form{
+      padding: 0;
+      .logo-facebook {
+        width: 130px;
+      }
+    }
   }
 }
 
 @media (max-width: 425px) { 
   .custom-container {
       width: 100%;
+      margin: auto;
+      padding-right: 10px;
+      padding-left: 10px;
     }
 }
 
@@ -314,6 +353,9 @@ ui-switch .switch-small {
 
   .input-logo { 
       text-align: center;
+  }
+  .label-color {
+    color: #a9a7a7;
   }
   .input-control {
     background-color: transparent;
