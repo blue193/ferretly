@@ -2,18 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 88vh;
-    height: calc(100vh - 128px);
+    height: calc(100% - 128px);
     color: #ffffffb3;
     font-size: 17px;
-    .row {
-        h1 {
-            width: 100%;
-            text-align: center;
-        }
+    .custom-container {
         .content {
             width: 100%;
             margin: 15px 0px -5px 0px;
+            h1 {
+                width: 100%;
+                text-align: center;
+            }
         }
         .border {
             width: 100%;
@@ -43,6 +42,7 @@
             border: 2px solid #61b921;
         }
         .btn-take {
+            white-space: pre-wrap !important;
             border-radius: 0px !important;
             font-size: 19px !important;
             width: 90%;

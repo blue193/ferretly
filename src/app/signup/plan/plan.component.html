@@ -1,7 +1,9 @@
 <div class="container">
-  <div class="row">
-    <h1>Your package</h1>
+  <div class="custom-container">
+  
+    
     <div class="content">
+      <h1>Your package</h1>
       <p>
         Below is your plan selection which represents the number of social media background checks you want to run.
         You will be billed immediately based on the package you choose. The credits can be used for background
@@ -24,13 +26,20 @@
             </label>
             <button 
               class="btn btn-success btn-sm text-white btn-bookmark" 
-              *ngIf="plan.id === selectedPlan.id">
+              *ngIf="plan.id === selectedPlan.id" (click)="modify()">
               Modify
             </button>
           </div>
         </li>
       </ul>
     </div>
-    <button class="btn btn-outline-success btn-block text-white btn-take" (click)="nextTo()">Accept this selection and create my account</button>
+    <div class="flex-container" *ngIf="isEnabledCustomBtn">
+        <input class="input-credit" type="text">
+    </div>
+    <div class="action-container">
+      <button class="btn btn-outline-success btn-block text-white btn-take" (click)="nextTo()">Accept this selection and create my account</button>
+    </div>
+    
   </div>
+  
 </div>

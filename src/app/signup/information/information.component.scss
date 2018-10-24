@@ -5,8 +5,7 @@
     height: calc(100vh - 128px);
     color: #ffffffb3;
     font-size: 17px;
-    width: 79%;
-    .row {
+    .custom-container {
         font-size: 15px !important;
         line-height: 18px;
         h1 {
@@ -52,6 +51,7 @@
             .custom-submit {
                 text-align: center;
                 button {
+                    white-space: pre-wrap !important;
                     background-color: transparent !important;
                     color: white;
                     font-size: 19px !important;

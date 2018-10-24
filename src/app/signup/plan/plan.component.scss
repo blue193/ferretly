@@ -2,23 +2,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vh;
     height: calc(100vh - 128px);
     color: #ffffffb3;
     font-size: 17px;
-    .row {
-        h1 {
-            width: 100%;
-            text-align: center;
-        }
+    .custom-container {
         .content {
             width: 100%;
             margin: 21px 0px;
+            h1 {
+                width: 100%;
+                text-align: center;
+            }
         }
         .list {
             width: 100%;
             ul {
                 list-style: none;
+                padding: 0 0 0 14px;
                 .checkmark {
                     background: white;
                     &::after {
@@ -50,12 +50,13 @@
         .btn-bookmark {
             margin-left: 16px;
             background: #61b921;
-            width: 114px;
-            height: 30px;
+            width: 20%;
+            height: 29px;
             border-radius: 7px;
             border: 2px solid #61b921;
         }
         .btn-take {
+            white-space: pre-wrap !important;
             border-radius: 0px !important;
             font-size: 19px !important;
             margin: 14px auto 0px auto;
@@ -63,5 +64,6 @@
                 background-color: #5fd400 !important;
             }
         }
-    }
+    }    
+        
 }

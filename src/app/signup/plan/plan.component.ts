@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class PlanComponent implements OnInit {
   plans: any[];
   selectedPlan: any;
+  isEnabledCustomBtn: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -29,13 +30,16 @@ export class PlanComponent implements OnInit {
       id: 5,
       description: 'Custom Plan: 34 Background Check Cridits($476)'
     }];
-    this.selectedPlan = this.plans[0];
+    this.selectedPlan = this.plans[4];
   }
 
   selectPlan(plan) {
-    this.selectedPlan = plan;
+    //  this.selectedPlan = plan;
   }
 
+  modify() {
+    this.isEnabledCustomBtn = true;
+  }
   nextTo() {
     this.router.navigate ( [ '/signup/info' ] );
   }
