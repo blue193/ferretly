@@ -1,28 +1,28 @@
 <div class="row justify-content-center">
   <div class="col-12 col-sm-8 col-md-6 col-lg-4">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="login-form">
-        <div class="logo-container text-center">
-          <img class="logo" src="/assets/images/logo.png">
-        </div>
-        <div class="input-container">
-          <label class="input-label">EMAIL ADDRESS</label>
-          <input class="input-control" type="text" id="email" name="email" formControlName="email" required>
-        </div>
-        <div class="input-container">
-          <label class="input-label">PASSWORD</label>
-          <div class="input-group">
-            <input type="password" class="input-control" id="password" name="password" formControlName="password" required>
-            <div class="input-group-prepend">
-              <div ngbDropdown  placement="bottom-right" class="d-inline-block drop-down">
-                <span class="input-group-text question" id="dropdownBasic1" ngbDropdownToggle>?</span>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="li-forgot">
-                  <a class="dropdown-item">Forgot Password</a>
-                  <a class="dropdown-item">Forgot Email</a>
-                  <a class="dropdown-item">Reset Password</a>
-                </div>
+      <div class="logo-container text-center">
+        <img class="logo" src="/assets/images/logo.png">
+      </div>
+      <div class="input-container">
+        <label class="input-label">EMAIL ADDRESS</label>
+        <input class="input-control" type="text" id="email" name="email" formControlName="email" required>
+      </div>
+      <div class="input-container">
+        <label class="input-label">PASSWORD</label>
+        <div class="input-group">
+          <input type="password" class="input-control" id="password" name="password" formControlName="password" required>
+          <div class="input-group-prepend">
+            <div ngbDropdown  placement="bottom-right" class="d-inline-block drop-down">
+              <span class="input-group-text question" id="dropdownBasic1" ngbDropdownToggle>?</span>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="li-forgot">
+                <a class="dropdown-item">Forgot Password</a>
+                <a class="dropdown-item">Forgot Email</a>
+                <a class="dropdown-item">Reset Password</a>
               </div>
-            </div> 
-          </div>
+            </div>
+          </div> 
+        </div>
       </div>
       <button class="btn-login btn btn-block btn-outline-success" type="submit" [disabled]="!contactForm.valid">Login</button>
     </form>

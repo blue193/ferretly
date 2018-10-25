@@ -259,14 +259,14 @@ ui-switch .switch-small {
   .label-color {
     color: #a9a7a7;
   }
-  // .input-control {
-  //   background-color: transparent;
-  //   border: none;
-  //   border-bottom: 1px solid #ffffffb3;
-  //   outline: none;
-  //   color: #ffffffb3;
-  //   padding: 12px 0;
-  //   font-size: 16px;
-  //   flex-grow: 1;
-  // }
+  .input-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffffb3;
+    outline: none;
+    color: #ffffffb3;
+    padding: 12px 0;
+    font-size: 16px;
+    flex-grow: 1;
+  }
 }
