@@ -1,12 +1,16 @@
 .welcome-container {
     color: #ffffffb3;
-    padding: 0 10px;
+    padding: 0 20px;
     .content {
         width: 100%;
         margin: 15px 0px -5px 0px;
         h1 {
             width: 100%;
             text-align: center;
+        }
+        .content-sm-1 {
+            font-size: 19px;
+            line-height: 22px;
         }
     }
     .border {
@@ -39,16 +43,50 @@
     .btn-take {
         white-space: pre-wrap !important;
         border-radius: 0px !important;
-        font-size: 19px !important;
+        font-size: 19px;
         width: 90%;
         margin: 14px auto 0px auto;
         &:hover {
             background-color: #5fd400 !important;
         }
     }
-    .content-2 {
+    .content-sm-2 {
         width: 100%;
         margin: 21px 0px;
-        font-size: 16px !important;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .welcome-container {
+        .content {
+            h1 {
+                font-size: 23px;
+            }
+            .content-sm-1 {
+                font-size: 15px;
+                line-height: 20px;
+            }
+        }
+        .list {
+            padding: 15px 10px;
+            line-height: 31px;
+            div {
+                span {
+                    margin-right: 15px;
+                }
+            }
+            
+        }
+    }
+    .content-sm-2 {
+        font-size: 12px !important;
+    }
+    .border {
+        display: none;
+    }
+    .btn-take {
+        line-height: 14px;
+        font-size: 15px !important;
     }
 }
