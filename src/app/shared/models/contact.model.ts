@@ -1,6 +1,6 @@
 export class Contact {
-    bill: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     companyName: string;
     mailAddress: string;
     password: string;
@@ -8,8 +8,8 @@ export class Contact {
     checked: boolean;
 
     constructor() {
-        this.bill = '';
-        this.lastName = '';
+        this.firstname = '';
+        this.lastname = '';
         this.companyName = '';
         this.mailAddress = '';
         this.password = '';

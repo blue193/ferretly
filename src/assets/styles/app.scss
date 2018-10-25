@@ -244,105 +244,7 @@ ui-switch .switch-small {
   }
 }
 
-@include media-breakpoint-up(lg) {
-  .custom-container {
-    width: 800px;
-    margin: auto;
-    .login-form {
-      padding: 0 150px;
-      .logo-facebook {
-        width: 200px;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(lg) {
-  .custom-container {
-    width: 800px;
-    margin: auto;
-    .login-form{
-      padding: 0 150px;
-      .logo-facebook {
-        width: 200px;
-      }
-    }
-  }
-} 
-
-@include media-breakpoint-down(md) {
-  .custom-container {
-    width: 400px;
-    margin: auto;
-    .login-form{
-      padding: 0;
-      .logo-facebook {
-        width: 150px;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(xs) {
-  .custom-container {
-    width: 100%;
-    margin: auto;
-    padding-right: 10px;
-    padding-left: 10px;
-    .login-form{
-      padding: 0;
-      .logo-facebook {
-        width: 130px;
-      }
-    }
-  }
-}
-
-@media (max-width: 425px) { 
-  .custom-container {
-      width: 100%;
-      margin: auto;
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-}
-
-@media only screen and (max-width: 425px) {
-  .tool-bar {
-    display: none;
-  }
-
-  .tool-bar-mobile {
-    display: block;
-    padding: 10px 20px;
-
-    .page-title-container {
-      display: flex;
-      padding: 0 0 20px;
-      justify-content: space-between;
-
-      .page-title {
-        margin-bottom: 0;
-      }
-
-      label {
-        padding: 0 10px;
-        margin-bottom: 0;
-      }
-
-      .icon-print {
-        font-size: 30px;
-        color: rgba(255, 255, 255, 0.7);
-      }
-    }
-
-    .filter-container {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-}
-
+// custom
 .border-color {
   border-color: #5fd400;
 }
@@ -357,27 +259,14 @@ ui-switch .switch-small {
   .label-color {
     color: #a9a7a7;
   }
-  .input-control {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #ffffffb3;
-    outline: none;
-    color: #ffffffb3;
-    padding: 12px 0;
-    font-size: 16px;
-    flex-grow: 1;
-  }
-  .question {
-      width: 28px;
-      height: 28px;
-      border: 2px solid $green-color;
-      border-radius: 8px;
-      text-align: center;
-      display: inline-block;
-      padding: 4px;
-      line-height: 16px;
-      font-size: 16px;
-      color: white;
-      background: transparent;
-  }
+  // .input-control {
+  //   background-color: transparent;
+  //   border: none;
+  //   border-bottom: 1px solid #ffffffb3;
+  //   outline: none;
+  //   color: #ffffffb3;
+  //   padding: 12px 0;
+  //   font-size: 16px;
+  //   flex-grow: 1;
+  // }
 }

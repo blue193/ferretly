@@ -1,55 +1,65 @@
 @import "../../assets/styles/app.scss";
-.custom-container {
-  margin-top: 284px;
-}
 
-.custom-logo {
-  display: flex;
-  justify-content: center;
-}
-
-.custom-input {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0;
-}
-
-.btn-custom-login {
+.login-form {
+  padding: 0 10px;
+  .logo {
+    width: 200px;
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    flex: 0 0 49%;
+    color: #ffffffb3;
+    .input-label {
+      text-transform: uppercase;
+    }
+    .input-control {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #ffffffb3;
+      outline: none;
+      color: #fff;
+      padding: 5px;
+      font-size: 16px;
+    }
+  }
+  .btn-login {
     color: white;
-    font-size: 22px;
+    font-size: 21px;
     padding: 5px 20px;
-    border-color: gray;
     width: 100%;
     border-radius: 0px !important;
     &:hover {
       background-color: #5fd400;
+      color: white;
     }
     &:disabled {
       color: gray;
       border-color: gray;
       background-color: transparent;
-      cursor: not-allowed;
     }
-    
-}
-.drop-down {
-  &:hover {
-    cursor: pointer;
   }
-  #dropdownBasic1::after {
-    display: none;
-  }
-  .question {
-    width: 28px;
-    height: 28px;
-    border: 2px solid $green-color;
-    border-radius: 8px;
-    text-align: center;
-    display: inline-block;
-    padding: 4px;
-    line-height: 16px;
-    font-size: 16px;
-    color: white;
-    background: transparent;
+  
+  .drop-down {
+    &:hover {
+      cursor: pointer;
+    }
+    #dropdownBasic1::after {
+      display: none;
+    }
+    .question {
+      width: 28px;
+      height: 28px;
+      border: 2px solid $green-color;
+      border-radius: 8px;
+      text-align: center;
+      display: inline-block;
+      padding: 4px;
+      line-height: 16px;
+      font-size: 16px;
+      color: white;
+      background: transparent;
+    }
   }
 }

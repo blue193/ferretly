@@ -1,68 +1,72 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 128px);
+.info-container {
     color: #ffffffb3;
-    font-size: 17px;
-    .custom-container {
-        font-size: 15px !important;
-        line-height: 18px;
-        h1 {
-            width: 100%;
-            text-align: center;
-        }
-        .content {
-            width: 100%;
-            margin: 21px 0px;
-            span {
-                background: transparent;
-                text-decoration: underline;
-            }
-        }
-        form {
-            width: 90%;
-            margin: 13px auto 46px auto;
-            input {
-                width: 100%;
-            }
-            .alert.alert-danger {
-                background-color: transparent;
-                border: none;
-                padding: 0;
-                color: red;
-            }
-            .border {
-                width: 100%;
-                margin: 62px 0;
-                border-bottom: 1px solid #4f5c69 !important;
-            }
-            .custom-display {
-                display: flex;
-                width: 100%;
-                margin: 25px auto 46px auto;
-                .checkbox-label {
-                    .mark {
-                        text-decoration: underline;
-                        background: transparent;
-                    }
-                }
-            }
-            .custom-submit {
-                text-align: center;
-                button {
-                    white-space: pre-wrap !important;
-                    background-color: transparent !important;
-                    color: white;
-                    font-size: 19px !important;
-                    width: 90%;
-                    margin: auto;
-                    border-radius: 0px !important;
-                    &:hover {
-                        background-color: #5fd400 !important;
-                    }
-                }
-            }
-        } 
+    font-size: 15px;
+    line-height: 18px;
+    padding: 0 10px;
+    h1 {
+        width: 100%;
+        text-align: center;
     }
+    .content {
+        width: 100%;
+        margin: 21px 0px;
+        a {
+            background: transparent;
+            text-decoration: underline;
+            &:focus {
+                cursor: pointer;
+            }
+        }
+    }
+    form {
+        width: 90%;
+        margin: 13px auto 46px auto;
+        input {
+            width: 100%;
+            &::placeholder {
+                color: #4f5c69;
+            }
+        }
+        .alert.alert-danger {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            color: red;
+        }
+        .border {
+            width: 100%;
+            margin: 62px 0;
+            border-bottom: 1px solid #4f5c69 !important;
+        }
+        .custom-display {
+            display: flex;
+            width: 100%;
+            margin: 25px auto 46px auto;
+            .checkbox-label {
+                .mark {
+                    text-decoration: underline;
+                    background-color: transparent;
+                }
+            }
+        }
+    } 
+}
+
+.btn-custom-login {
+    color: white;
+    font-size: 22px;
+    padding: 5px 20px;
+    width: 100%;
+    border-radius: 0px !important;
+    white-space: normal;
+    &:hover {
+      background-color: #5fd400;
+    }
+    &:disabled {
+      color: gray;
+      border-color: gray;
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+    
 }

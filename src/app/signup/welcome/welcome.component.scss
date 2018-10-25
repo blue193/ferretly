@@ -1,60 +1,54 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100% - 128px);
+.welcome-container {
     color: #ffffffb3;
-    font-size: 17px;
-    .custom-container {
-        .content {
+    padding: 0 10px;
+    .content {
+        width: 100%;
+        margin: 15px 0px -5px 0px;
+        h1 {
             width: 100%;
-            margin: 15px 0px -5px 0px;
-            h1 {
-                width: 100%;
-                text-align: center;
-            }
+            text-align: center;
         }
-        .border {
-            width: 100%;
-            margin: 10px 0;
-            border-bottom: 1px solid #4f5c69 !important;
+    }
+    .border {
+        width: 100%;
+        margin: 10px 0;
+        border-bottom: 1px solid #4f5c69 !important;
+    }
+    .list {
+        width: 100%;
+        padding: 19px 44px;
+        line-height: 42px;
+        .title-1 {
+            font-weight: bold;
+            color: white;
+            margin-right: 50px;
         }
-        .list {
-            width: 100%;
-            padding: 19px 44px;
-            line-height: 42px;
-            .title-1 {
-                font-weight: bold;
-                color: white;
-                margin-right: 50px;
-            }
-            .title-2 {
-                font-weight: bold;
-                color: white;
-                margin-right: 43px;
-            }
+        .title-2 {
+            font-weight: bold;
+            color: white;
+            margin-right: 43px;
         }
-        .btn-bookmark {
-            margin-left: 16px;
-            background: #61b921;
-            width: 125px;
-            border-radius: 7px;
-            border: 2px solid #61b921;
+    }
+    .btn-bookmark {
+        margin-left: 16px;
+        background: #61b921;
+        width: 125px;
+        border-radius: 7px;
+        border: 2px solid #61b921;
+    }
+    .btn-take {
+        white-space: pre-wrap !important;
+        border-radius: 0px !important;
+        font-size: 19px !important;
+        width: 90%;
+        margin: 14px auto 0px auto;
+        &:hover {
+            background-color: #5fd400 !important;
         }
-        .btn-take {
-            white-space: pre-wrap !important;
-            border-radius: 0px !important;
-            font-size: 19px !important;
-            width: 90%;
-            margin: 14px auto 0px auto;
-            &:hover {
-                background-color: #5fd400 !important;
-            }
-        }
-        .content-2 {
-            width: 100%;
-            margin: 21px 0px;
-            font-size: 16px !important;
-        }
+    }
+    .content-2 {
+        width: 100%;
+        margin: 21px 0px;
+        font-size: 16px !important;
     }
 }

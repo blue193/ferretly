@@ -1,60 +1,79 @@
-<div class="container">
-    <div class="row">
-      <h1>Enter your payment information</h1>
-      <div class="content">
-        <p>
-            Use this page to enter your credit card payment details.
-            Please review the information prior to clicking submit. You are authorizing Ferretly International,
-            LLC to charge your credit card in the amount shown below based upon the plan you chose. You will
-            be provided with the number of background search credits to your account which you can use at any time.
-        </p>
-      </div>
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div class="input-container col-md-11 justify-content-center mx-auto p-0">
-            <div class="col-12">
-                <input type="text" class="input-control" id="card" name="card" formControlName="card" placeholder="Name on Card" required>
-                <div *ngIf="f.card.invalid && (f.card.dirty || f.card.touched)" class="alert alert-danger">
-                    <span>Name on Card must be filled!</span>
-                </div>
-            </div>  
-        </div>
-
-        <div class="input-container col-md-11 mx-auto justify-content-between">
-            <input type="text" class="input-control col-md-7" id="credit" name="credit" formControlName="credit" placeholder="Credit Card#" required>
-            <input type="text" class="input-control col-md-4" id="discount" name="discount" formControlName="discount" placeholder="Discount Code" required>
-        </div>
-
-        <div class="input-container justify-content-between col-md-11 mx-auto p-0">
-            <div class="col-5">
-                <input type="text" class="input-control col-md-3 mr-1" id="month" name="month" formControlName="month" placeholder="MM" required>
-                <input type="text" class="input-control col-md-3 mr-1" id="year" name="year" formControlName="year" placeholder="YY" required>
-                <input type="text" class="input-control col-md-5 mr-1" id="security" name="security" formControlName="security" placeholder="Security Code" required>
+<div class="row justify-content-center">
+    <div class="col col-sm-10 col-md-8 col-lg-6">
+        <div class="payment-container">
+            <h1>Enter your payment information</h1>
+            <div class="content">
+                <p>
+                    Use this page to enter your credit card payment details.
+                    Please review the information prior to clicking submit. You are authorizing Ferretly International,
+                    LLC to charge your credit card in the amount shown below based upon the plan you chose. You will
+                    be provided with the number of background search credits to your account which you can use at any
+                    time.
+                </p>
             </div>
-
-            <div class="col-7">
-                <div class="justify-content-center text-right custom-image">
-                    <img src="../../../assets/images/paypal.png" class="i-paypal">
-                    <img src="../../../assets/images/credit-logos.png" class="i-credit">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="input-container col-md-11 justify-content-center mx-auto p-0">
+                    <div class="col-12">
+                        <input type="text" class="input-control text-white" id="card" name="card" formControlName="card"
+                            placeholder="Name on Card" required>
+                        <div *ngIf="f.card.invalid && (f.card.dirty || f.card.touched)" class="alert alert-danger">
+                            <span>Name on Card must be filled!</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="checkbox-container custom-display">
-            <label class="custom-checkbox">
-                <input type="checkbox" name="checked" formControlName="checked" checked="checked" required>
-                <span class="checkmark"></span>
-            </label>
-            <span class="checkbox-label custom-label">
-                I authorize the immediate payment of <span class="mark">$25 based on the Single Credit</span> plan chosen. 
-                I understand that I will be billed immediately and there are no refunds.
-            </span>
-        </div>
 
-        <div class="border"></div>
+                <div class="input-container col-md-11 mx-auto justify-content-between">
+                    <input type="text" class="input-control text-white col-md-7" id="credit" name="credit"
+                        formControlName="credit" placeholder="Credit Card#" required>
+                    <input type="text" class="input-control text-white col-md-4" id="discount" name="discount"
+                        placeholder="Discount Code">
+                </div>
 
-        <div class="col-12 custom-submit">
-            <button type="submit" class="btn btn-success" [disabled]="!contactForm.valid">Complete my purchase</button>
-        </div>  
-      </form>
-      
+                <div class="input-container justify-content-between col-md-11 mx-auto p-0 flex-wrap">
+                    <div class="col-sm-12 col-md-1">
+                        <input type="text" class="input-control text-white pr-1" id="month" name="month"
+                            formControlName="month" placeholder="MM" required>
+                    </div>
+                    <div class="col-sm-12 col-md-1">
+                        <input type="text" class="input-control text-white pr-1" id="year" name="year" formControlName="year"
+                            placeholder="YY" required>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                        <input type="text" class="input-control text-white pr-1" id="security" name="security"
+                            formControlName="security" placeholder="Security Code" required>
+                    </div>
+
+                    <div class="col-sm-12 col-md-7">
+                        <div class="row h-100 align-items-end pt-2">
+                            <div class="col-5">
+                                <img src="../../../assets/images/paypal.png" class="w-100">
+                            </div>
+                            <div class="col-7">
+                                <img src="../../../assets/images/credit-logos.png" class="w-100">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="checkbox-container custom-display">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="checked" formControlName="checked" checked="checked" required>
+                        <span class="checkmark"></span>
+                    </label>
+                    <span class="checkbox-label custom-label">
+                        I authorize the immediate payment of <span class="mark">$25 based on the Single Credit</span>
+                        plan chosen.
+                        I understand that I will be billed immediately and there are no refunds.
+                    </span>
+                </div>
+
+                <div class="border"></div>
+
+                <div class="action-container">
+                    <button class="btn btn-outline-success btn-custom-login" type="submit" [disabled]="!contactForm.valid">Create
+                        your account and go to payment</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
+</div>

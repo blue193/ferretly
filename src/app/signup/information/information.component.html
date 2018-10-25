@@ -1,63 +1,74 @@
-<div class="container">
-  <div class="custom-container">
-    <div class="col-12">
-      <h1>Enter your account information</h1>
-      <div class="content">
-        <p>
-          Use this page to enter your name, email address and choose a password. Your information will never be shared and you will remain completely anonymous including to any of the social media profile handles you choose to monitor.
-          Please read our <span class="mark">terms of service</span> to understand more about your privacy.
-        </p>
+<div class="row justify-content-center">
+  <div class="col col-sm-10 col-md-8 col-lg-6">
+    <div class="info-container">
+      <div class="col-12">
+        <h1>Enter your account information</h1>
+        <div class="content">
+          <p>
+            Use this page to enter your name, email address and choose a password. Your information will never be
+            shared and you will remain completely anonymous including to any of the social media profile handles you
+            choose to monitor.
+            Please read our <a class="mark">privacy policy</a> to understand more about your privacy.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="col-12">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div class="input-container input-group col-md-12 justify-content-center p-0">
-          <div class="col-md-5 mx-auto">
-            <input class="input-control" type="text" name="bill"  id="bill" formControlName="bill" placeholder="Bill" required>
-            <div *ngIf="f.bill.invalid && (f.bill.dirty || f.bill.touched)" class="alert alert-danger">
-              <span>Biil Name must be filled!</span>
+      <div class="col-12">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="input-container input-group col-md-12 justify-content-center p-0">
+            <div class="col-md-5 mx-auto">
+              <input class="input-control text-white" type="text" name="firstname" id="firstname" formControlName="firstname"
+                placeholder="First Name" required>
+              <div *ngIf="f.firstname.invalid && (f.firstname.dirty || f.firstname.touched)" class="alert alert-danger">
+                <span>Firs Name must be filled!</span>
+              </div>
+            </div>
+            <div class="col-md-5 offset-md-1 mx-auto">
+              <input class="input-control text-white" name="lastname" formControlName="lastname" id="lastname" type="text"
+                placeholder="Last Name" required>
             </div>
           </div>
-          <div class="col-md-5 offset-md-1 mx-auto">
-            <input class="input-control" name="lastName" formControlName="lastName" id="lastName" type="text" placeholder="Last name" required>
+
+          <div class="input-container input-group col-md-11 mx-auto">
+            <input class="input-control text-white" type="text" name="companyName" formControlName="companyName" id="companyName"
+              placeholder="Company Name" required>
           </div>
-        </div>
 
-        <div class="input-container input-group col-md-11 mx-auto">
-          <input class="input-control" type="text" name="companyName" formControlName="companyName" id="companyName" placeholder="Company Name" required>
-        </div>
-
-        <div class="input-container input-group col-md-11 mx-auto">
-          <input type="text" [(ngModel)]="myEmail" name="mailAddress" id="mailAddress" class="input-control" formControlName="mailAddress" placeholder="Email address" required>
-          <div *ngIf="f.mailAddress.invalid && (f.mailAddress.dirty || f.mailAddress.touched)" class="alert alert-danger">
-            <span *ngIf="f.mailAddress.errors.required">Email Address must be filled!</span>
-            <span *ngIf="f.mailAddress.errors.mailAddress">Email Address must be valid!</span>
+          <div class="input-container input-group col-md-11 mx-auto">
+            <input type="text" [(ngModel)]="myEmail" name="mailAddress" id="mailAddress" class="input-control text-white"
+              formControlName="mailAddress" placeholder="Email address" required>
+            <div *ngIf="f.mailAddress.invalid && (f.mailAddress.dirty || f.mailAddress.touched)" class="alert alert-danger">
+              <span *ngIf="f.mailAddress.errors.required">Email Address must be filled!</span>
+              <span *ngIf="f.mailAddress.errors.mailAddress">Email Address must be valid!</span>
+            </div>
           </div>
-        </div>
 
-        <div class="input-container input-group col-md-12 justify-content-center">
-          <input class="input-control col-md-5" type="password" name="password" formControlName="password" id="password" placeholder="Password" required>
-          <input class="input-control col-md-5 offset-md-1" type="password" name="confirmPwd" formControlName="confirmPwd" id="confirmPwd" placeholder="Confirm password" required>
-        </div>
+          <div class="input-container input-group col-md-12 justify-content-center">
+            <input class="input-control text-white col-md-5" type="password" name="password" formControlName="password"
+              id="password" placeholder="Password" required>
+            <input class="input-control text-white col-md-5 offset-md-1" type="password" name="confirmPwd"
+              formControlName="confirmPwd" id="confirmPwd" placeholder="Confirm password" required>
+          </div>
 
-        <div class="border"></div>
-        
-        <div class="checkbox-container custom-display">
-          <label class="custom-checkbox">
+          <div class="border"></div>
+
+          <div class="checkbox-container custom-display">
+            <label class="custom-checkbox">
               <input type="checkbox" name="checked" formControlName="checked" checked="checked">
               <span class="checkmark"></span>
-          </label>
-          <span class="checkbox-label">
-              I acknowledge that I have read and accept the <span class="mark">terms of use agreement</span> and consent to the Privacy Policy.
-          </span>
-        </div>
+            </label>
+            <span class="checkbox-label">
+              I acknowledge that I have read and accept the <span class="mark">terms of use</span> and consent to the
+              <a class="mark">Privacy Policy</a>.
+            </span>
+          </div>
 
-        <div class="col-12 custom-submit">
-          <button type="submit" class="btn btn-success" [disabled]="!contactForm.valid">Create your account and go to payment</button>
-        </div>
+          <div class="action-container">
+            <button class="btn btn-outline-success btn-custom-login" type="submit" [disabled]="!contactForm.valid">Create
+              your account and go to payment</button>
+          </div>
 
-      </form>
+        </form>
+      </div>
     </div>
-
   </div>
 </div>

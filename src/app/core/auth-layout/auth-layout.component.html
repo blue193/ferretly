@@ -2,15 +2,12 @@
   <nav class="navbar custom-navbar bg-faded main-header px-3">
     <ul class="navbar-nav" *ngIf="!isCompletePage">
       <li class="nav-item">
-          <!-- <a [routerLink]="['/login']"
-          [routerLinkActive]="['nav-active']"
-          [routerLinkActiveOptions]="{ exact: false }">&lt; Back to  -->
           <a>&lt; Back to
           <span class="navbar-text" id="nav-link" (click)="back()">ferretly.com</span>
           </a>
       </li>
       <li class="nav-item" *ngIf="isSettingPage">
-        <a class="nav-active" [ngClass]="isActive('/signup/plan') ? 'line' : 'unline'">1.Choose a plan</a>
+        <a class="nav-active" [ngClass]="isActive('/signup/plan') || isActive('/signup/info') ? 'line' : 'unline'" routerLink="/signup/plan">1.Choose a plan</a>
       </li>
       <li class="nav-item" *ngIf="isSettingPage">
         <a class="nav-active" [ngClass]="isActive('/signup/info') ? 'line' : 'unline'">2.Your information</a>
@@ -38,7 +35,9 @@
     </ng-template>
   </nav>
   
-  <router-outlet></router-outlet>
+  <div class="main-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 
   <nav class="navbar custom-navbar main-footer small px-3">
     <ul class="navbar-nav mr-auto">

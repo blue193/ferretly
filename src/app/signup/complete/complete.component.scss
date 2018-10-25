@@ -1,78 +1,74 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 128px);
+.payment-container {
     color: #ffffffb3;
-    font-size: 17px;
-    width: 56%;
-    .row {
-        font-size: 15px !important;
-        line-height: 18px;
-        h1 {
-            width: 100%;
-            text-align: center;
-        }
-        .content {
-            width: 100%;
-            margin: 21px 0px;
-        }
-        form {
-            width: 90%;
-            margin: 13px auto 46px auto;
-            input {
-                width: 100%;
-            }
-            .alert.alert-danger {
-                background-color: transparent;
-                border: none;
-                padding: 0;
-                color: red;
-            }
-            .custom-image {
-                margin-left: auto;
-                .i-paypal {
-                    width: 36%;
-                    padding: 9px;
-                }
-                .i-credit {
-                    width: 56%;
-                }
-            }
-            .border {
-                width: 100%;
-                margin: 62px 0;
-                border-bottom: 1px solid #4f5c69 !important;
-            }
-            .custom-display {
-                display: flex;
-                width: 100%;
-                margin: 25px auto 46px auto;
-                .checkbox-label {
-                    .mark {
-                        text-decoration: underline;
-                        background: transparent;
-                    }
-                }
-            }
-            .custom-submit {
-                text-align: center;
-                button {
-                    white-space: pre-wrap !important;
-                    background-color: transparent !important;
-                    color: white;
-                    font-size: 19px !important;
-                    width: 90%;
-                    margin: auto;
-                    border-radius: 0px !important;
-                    &:hover {
-                        background-color: #5fd400 !important;
-                    }
-                }
-            }
-        } 
+    h1 {
+        width: 100%;
+        text-align: center;
     }
+    .content {
+        width: 100%;
+        margin: 21px 0px;
+    }
+    form {
+        width: 90%;
+        margin: 13px auto 46px auto;
+        input {
+            width: 100%;
+            &::placeholder {
+                color: #4f5c69;
+            }
+        }
+        .alert.alert-danger {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            color: red;
+        }
+        .custom-image {
+            
+            .i-paypal {
+                width: 36%;
+            }
+            .i-credit {
+                width: 54%;
+            }
+        }
+        .border {
+            width: 100%;
+            margin: 62px 0;
+            border-bottom: 1px solid #4f5c69 !important;
+        }
+        .custom-display {
+            display: flex;
+            width: 100%;
+            margin: 25px auto 46px auto;
+            .checkbox-label {
+                .mark {
+                    text-decoration: underline;
+                    background: transparent;
+                }
+            }
+        }
+    } 
 }
+
+.btn-custom-login {
+    color: white;
+    font-size: 22px;
+    padding: 5px 20px;
+    width: 100%;
+    border-radius: 0px !important;
+    &:hover {
+      background-color: #5fd400;
+    }
+    &:disabled {
+      color: gray;
+      border-color: gray;
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+    
+}
+
 @media only screen and (max-width: 768px) {
     .i-paypal {
         width: 15vh;

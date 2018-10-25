@@ -33,7 +33,7 @@ a.nav-link:hover {
     }
   a.nav-active.unline {
       text-decoration: none;
-      cursor: not-allowed;
+      pointer-events: none;
       opacity: 0.5;
     }
 }
@@ -46,3 +46,8 @@ img {
   top: 19px;
 }
 
+.main-wrapper {
+  display: flex;
+  height: calc(100vh - 100px);
+  align-items: center;
+}
