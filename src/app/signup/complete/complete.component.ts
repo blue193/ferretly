@@ -27,11 +27,6 @@ export class CompleteComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
-      card: new FormControl(this.contact.card, Validators.required),
-      credit: new FormControl(this.contact.credit, Validators.required),
-      month: new FormControl(this.contact.month, Validators.required),
-      year: new FormControl(this.contact.year, Validators.required),
-      security: new FormControl(this.contact.security, Validators.required),
       checked: new FormControl(this.contact.checked, Validators.pattern('true'))
     });
   }

@@ -29,15 +29,10 @@ export class InformationComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
-      firstname: new FormControl(this.contact.firstname, Validators.required),
-      lastname: new FormControl(this.contact.lastname, Validators.required),
-      companyName: new FormControl(this.contact.companyName, Validators.required),
       mailAddress: new FormControl(this.contact.mailAddress, [
         Validators.required,
         Validators.email
       ]),
-      password: new FormControl(this.contact.password, Validators.required),
-      confirmPwd: new FormControl(this.contact.confirmPassword, Validators.required),
       checked: new FormControl(this.contact.checked, Validators.pattern('true'))
     })
   }

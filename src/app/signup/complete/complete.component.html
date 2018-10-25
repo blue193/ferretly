@@ -14,33 +14,34 @@
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="input-container col-md-11 justify-content-center mx-auto p-0">
                     <div class="col-12">
-                        <input type="text" class="input-control text-white" id="card" name="card" formControlName="card"
-                            placeholder="Name on Card" required>
-                        <div *ngIf="f.card.invalid && (f.card.dirty || f.card.touched)" class="alert alert-danger">
-                            <span>Name on Card must be filled!</span>
-                        </div>
+                        <input type="text" class="input-control text-white" id="card" name="card" 
+                            placeholder="Name on Card">
                     </div>
                 </div>
 
-                <div class="input-container col-md-11 mx-auto justify-content-between">
-                    <input type="text" class="input-control text-white col-md-7" id="credit" name="credit"
-                        formControlName="credit" placeholder="Credit Card#" required>
-                    <input type="text" class="input-control text-white col-md-4" id="discount" name="discount"
+                <div class="input-container col-md-11 mx-auto justify-content-between flex-wrap">
+                    <div class="col-sm-12 col-md-5 mx-auto">
+                        <input type="text" class="input-control text-white col-md-7" id="credit" name="credit"
+                         placeholder="Credit Card#">
+                    </div>
+                    <div class="col-sm-12 col-md-5 offset-md-1 mx-auto">
+                        <input type="text" class="input-control text-white col-md-4" id="discount" name="discount"
                         placeholder="Discount Code">
+                    </div>
                 </div>
 
                 <div class="input-container justify-content-between col-md-11 mx-auto p-0 flex-wrap">
                     <div class="col-sm-12 col-md-1">
                         <input type="text" class="input-control text-white pr-1" id="month" name="month"
-                            formControlName="month" placeholder="MM" required>
+                             placeholder="MM">
                     </div>
                     <div class="col-sm-12 col-md-1">
-                        <input type="text" class="input-control text-white pr-1" id="year" name="year" formControlName="year"
-                            placeholder="YY" required>
+                        <input type="text" class="input-control text-white pr-1" id="year" name="year" 
+                            placeholder="YY">
                     </div>
                     <div class="col-sm-12 col-md-3">
                         <input type="text" class="input-control text-white pr-1" id="security" name="security"
-                            formControlName="security" placeholder="Security Code" required>
+                             placeholder="Security Code">
                     </div>
 
                     <div class="col-sm-12 col-md-7">

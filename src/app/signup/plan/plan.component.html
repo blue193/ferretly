@@ -8,7 +8,7 @@
         searches at anytime from within the application.
       </p>
       <div class="plan-items-container">
-        <ul>
+        <ul class="p-0 pl-sm-4">
           <li *ngFor="let plan of plans; let idx = index">
             <div class="custom-radio-container">
               <label class="custom-radio">
@@ -21,11 +21,6 @@
                 {{plan.description}}
                 <span class="checkmark"></span>
               </label>
-              <button 
-                class="btn btn-sm btn-bookmark" 
-                *ngIf="plan.id === 5" (click)="modify()">
-                Modify
-              </button>
             </div>
           </li>
         </ul>
@@ -37,7 +32,7 @@
           <button class="btn btn-success btn-add-credit" [ngClass]="{'disabled': !isEnabledCustomBtn}" (click)="getQuote()">Get Quote</button>
         </div>
         <div class="flex-container" *ngIf="showCustomPlanQuote">
-          <span>Your price for {{customCredit}} background checks is $xx.xx</span>
+          <p>Your price for {{customCredit}} background checks is $xx.xx</p>
           <button class="btn btn-success btn-add-credit" (click)="getAnotherQuote()">Get Another Quote</button>
         </div>
       </div>

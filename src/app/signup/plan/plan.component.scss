@@ -64,69 +64,30 @@
     }
     .btn-continue {
         border-radius: 0px !important;
-        font-size: 19px !important;
+        font-size: 19px;
         margin: 14px auto 0px auto;
+        white-space: normal;
         &:hover {
             background-color: #5fd400 !important;
         }
     }
 }
-// .font-color {
-//     color: rgb(165, 169, 177);
-//     .content {
-//         width: 100%;
-//         margin: 21px 0px;
-//         font-size: 15px;
-//         h1 {
-//             width: 100%;
-//             text-align: center;
-//         }
-//     }
-//     .list {
-//         width: 100%;
-//         ul {
-//             list-style: none;
-//             padding: 0 0 0 14px;
-//             .checkmark {
-//                 background: white;
-//                 &::after {
-//                     top: 3px;
-//                     left: 3px;
-//                     width: 19px;
-//                     height: 19px;
-//                     border-radius: 50%;
-//                     background: #5fd400;
-//                 }
-//             }
-//         }
-//         .custom-radio-container {
-//             display: flex;
-//             font-size: 16px;
-//             .custom-radio {
-//                 font-size: 16px;
-//             }
-//         }
-//         .custom-control-label::after {
-//             font-size: 17px !important;
-//             line-height: 17px !important;
-//             color: #5fd400 !important;
-//             top: 5px !important;
-//             left: 2px !important;
-//             width: 14px !important;
-//             height: 17px !important;
-//         }
-//         .custom-control-label::before {
-//             top: 0.25em !important;
-//         }
-//     }
-//     .btn-bookmark {
-//         margin-left: 16px;
-//         background: #61b921;
-//         width: 13%;
-//         height: 26px;
-//         border-radius: 7px;
-//         font-size: 11px;
-//         border: 2px solid #61b921;
-//     }
 
-// }
+@media (max-width: 425px) {
+    .plan-container {
+        padding: 0 20px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .custom-radio {
+        font-size: 15px;
+    }
+    .btn-continue {
+        line-height: 14px;
+        font-size: 15px !important;
+    }
+}

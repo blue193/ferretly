@@ -16,21 +16,18 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="input-container input-group col-md-12 justify-content-center p-0">
             <div class="col-md-5 mx-auto">
-              <input class="input-control text-white" type="text" name="firstname" id="firstname" formControlName="firstname"
-                placeholder="First Name" required>
-              <div *ngIf="f.firstname.invalid && (f.firstname.dirty || f.firstname.touched)" class="alert alert-danger">
-                <span>Firs Name must be filled!</span>
-              </div>
+              <input class="input-control text-white" type="text" name="firstname" id="firstname" 
+                placeholder="First Name">
             </div>
             <div class="col-md-5 offset-md-1 mx-auto">
-              <input class="input-control text-white" name="lastname" formControlName="lastname" id="lastname" type="text"
-                placeholder="Last Name" required>
+              <input class="input-control text-white" name="lastname" id="lastname" type="text"
+                placeholder="Last Name">
             </div>
           </div>
 
           <div class="input-container input-group col-md-11 mx-auto">
-            <input class="input-control text-white" type="text" name="companyName" formControlName="companyName" id="companyName"
-              placeholder="Company Name" required>
+            <input class="input-control text-white" type="text" name="companyName" id="companyName"
+              placeholder="Company Name">
           </div>
 
           <div class="input-container input-group col-md-11 mx-auto">
@@ -43,17 +40,16 @@
           </div>
 
           <div class="input-container input-group col-md-12 justify-content-center">
-            <input class="input-control text-white col-md-5" type="password" name="password" formControlName="password"
-              id="password" placeholder="Password" required>
+            <input class="input-control text-white col-md-5" type="password" name="password" id="password" placeholder="Password">
             <input class="input-control text-white col-md-5 offset-md-1" type="password" name="confirmPwd"
-              formControlName="confirmPwd" id="confirmPwd" placeholder="Confirm password" required>
+              id="confirmPwd" placeholder="Confirm password">
           </div>
 
           <div class="border"></div>
 
           <div class="checkbox-container custom-display">
             <label class="custom-checkbox">
-              <input type="checkbox" name="checked" formControlName="checked" checked="checked">
+              <input type="checkbox" name="checked" formControlName="checked" checked="checked" required>
               <span class="checkmark"></span>
             </label>
             <span class="checkbox-label">

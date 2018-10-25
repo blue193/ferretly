@@ -1,4 +1,4 @@
-<div class="theme-winter no-bg">
+<div class="theme-winter no-bg auth-wrapper">
   <nav class="navbar custom-navbar bg-faded main-header px-3">
     <ul class="navbar-nav" *ngIf="!isCompletePage">
       <li class="nav-item">
@@ -6,22 +6,20 @@
           <span class="navbar-text" id="nav-link" (click)="back()">ferretly.com</span>
           </a>
       </li>
-      <li class="nav-item" *ngIf="isSettingPage">
+      <li class="nav-item d-none d-sm-flex" *ngIf="isSettingPage">
         <a class="nav-active" [ngClass]="isActive('/signup/plan') || isActive('/signup/info') ? 'line' : 'unline'" routerLink="/signup/plan">1.Choose a plan</a>
       </li>
-      <li class="nav-item" *ngIf="isSettingPage">
+      <li class="nav-item d-none d-sm-flex" *ngIf="isSettingPage">
         <a class="nav-active" [ngClass]="isActive('/signup/info') ? 'line' : 'unline'">2.Your information</a>
       </li>
-      <li class="nav-item" *ngIf="isSettingPage">
+      <li class="nav-item d-none d-sm-flex" *ngIf="isSettingPage">
         <a class="nav-active" [ngClass]="isActive('/signup/complete') ? 'line' : 'unline'">3.Payment</a>
       </li>
     </ul>
     <span class="mr-auto"></span>
   
     <div class="navbar-nav" *ngIf="!isLoginPage; else signUpEl">
-      <label class="input-logo">
-        <img src="../../../assets/images/logo.png" class="logo-facebook">
-      </label>
+      <img src="../../../assets/images/logo.png" class="logo">
     </div>
     <ng-template #signUpEl>
       <ul class="navbar-nav" >

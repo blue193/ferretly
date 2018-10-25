@@ -32,7 +32,7 @@ export class PlanComponent implements OnInit {
       description: '10 Background Check Cridits($195)'
     }, {
       id: 5,
-      description: `Custom Plan: 34 Background Check Cridits($${this.customCredit})`
+      description: `Custom Plan`
     }];
     this.selectedPlan = this.plans[0];
   }
@@ -55,7 +55,6 @@ export class PlanComponent implements OnInit {
   }
 
   getQuote() {
-    this.plans[4].description = `Custom Plan: 34 Background Check Cridits($${this.customCredit})`;
     this.showCustomPlanQuote = true;
     this.isEnabledAddBtn = true;
   }
