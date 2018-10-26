@@ -13,7 +13,8 @@ export class PlanComponent implements OnInit {
   showCustomPlanQuote: boolean = false;
   isEnabledAddBtn: boolean = true;
   customCredit: 0;
-
+  showModify: boolean;
+  displayQuote: boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -38,17 +39,23 @@ export class PlanComponent implements OnInit {
   }
 
   selectPlan(plan) {
+    this.displayQuote = false;
      this.selectedPlan = plan;
     if (plan.id === 5) {
-      this.customCredit = 0;
+      // this.customCredit = 0;
       this.isEnabledAddBtn = false;
+      this.showModify = true;
     } else {
       this.isEnabledAddBtn = true;
+      this.showModify = false;
+      // this.displayQuote = !this.displayQuote;
     }
   }
 
   modify() {
-    this.isEnabledCustomBtn = true;
+    // this.showModify = false;
+    this.displayQuote = !this.displayQuote;
+    console.log("this.showModify = ", this.showModify);
   }
   nextTo() {
     this.router.navigate ( [ '/signup/info' ] );
@@ -61,6 +68,7 @@ export class PlanComponent implements OnInit {
 
   getAnotherQuote() {
     this.showCustomPlanQuote = false;
+
   }
 
   onChangeCustomCredit(value) {

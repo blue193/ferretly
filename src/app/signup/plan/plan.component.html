@@ -20,12 +20,22 @@
                 (change)="selectPlan(plan)">
                 {{plan.description}}
                 <span class="checkmark"></span>
+                <span class="customPlanQuote" *ngIf="idx === 4">
+                  {{customCredit}} Background Check Credits (${{customCredit * 1.9}})
+                </span>
               </label>
+              <button
+                class="btn btn-sm-bookmark" *ngIf="showModify && idx === 4"                 
+                (click)="modify()"
+              >
+              Modify
+              </button>
             </div>
+            
           </li>
         </ul>
       </div>
-      <div class="additional-credit-container" *ngIf="selectedPlan.id === 5">
+      <div class="additional-credit-container" *ngIf="displayQuote">
         <div class="d-flex" *ngIf="!showCustomPlanQuote">
           <input class="input-credit" type="number" min="1" max="500" placeholder="Enter the number of credits and click on Get Quote"
                   [(ngModel)]="customCredit" (ngModelChange)="onChangeCustomCredit($event)">
@@ -36,6 +46,7 @@
           <button class="btn btn-success btn-add-credit" (click)="getAnotherQuote()">Get Another Quote</button>
         </div>
       </div>
+      
       <div class="action-container">
         <button class="btn btn-outline-success btn-block text-white btn-continue" (click)="nextTo()">Accept this selection and create my account</button>
       </div>

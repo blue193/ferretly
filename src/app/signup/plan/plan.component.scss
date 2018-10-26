@@ -14,7 +14,7 @@
             list-style: none;
             .custom-radio-container {
                 display: flex;
-                .btn-bookmark {
+                .btn-sm-bookmark {
                     color: white;
                     margin-left: 16px;
                     background: #61b921;
@@ -27,6 +27,7 @@
             }
         }
     }
+    
     .additional-credit-container {
         padding-bottom: 20px;
         .input-credit {
@@ -85,6 +86,13 @@
     }
     .custom-radio {
         font-size: 15px;
+    }
+    .custom-radio-container {
+        flex-wrap: wrap;
+        
+    }
+    .btn-sm-bookmark {
+        width: 21% !important;
     }
     .btn-continue {
         line-height: 14px;
